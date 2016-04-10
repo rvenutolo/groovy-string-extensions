@@ -2,6 +2,8 @@ package org.venutolo.groovyutils.extension
 
 import org.codehaus.groovy.runtime.GStringImpl
 
+import java.util.regex.Pattern
+
 /**
  * This class defines new groovy methods which appear on <code>String</code>
  * and <code>GString</code> classes inside the Groovy environment. Static
@@ -16,46 +18,49 @@ import org.codehaus.groovy.runtime.GStringImpl
  */
 class ToSingleLineExtension {
 
+    private static final Pattern LEADING_WHITESPACE = ~/^\s/
+
+    private static final Pattern TRAILING_WHITESPACE = ~/\s$/
+
+    private static final Pattern WHITESPACE_NEWLINE_WHITESPACE = ~/\s*\n\s*/
+
+    private static final Pattern MULTIPLE_WHITESPACE = ~/\s{2,}/
+
+    private static String trimAndReplacePattern(final String string, final Pattern pattern) {
+        pattern.matcher(string.trim()).replaceAll(' ')
+    }
+
     static String toSingleLine(final String self) {
-        self.trim().replaceAll(/\s*\n\s*/, ' ')
+        trimAndReplacePattern(self, WHITESPACE_NEWLINE_WHITESPACE)
     }
 
     static String toSingleCondensedLine(final String self) {
-        self.trim().replaceAll(/\s{2,}/, ' ')
+        trimAndReplacePattern(self, MULTIPLE_WHITESPACE)
+    }
+
+    private static GString trimAndReplacePattern(final GString gString, final Pattern pattern) {
+        final String[] originalStrings = gString.strings
+        final String[] newStrings = new String[originalStrings.length]
+        final int indexToTrimEnd = originalStrings.length - 1
+        originalStrings.eachWithIndex {final String originalString, final int i ->
+            String newString = pattern.matcher(originalString).replaceAll(' ')
+            if (i == 0) {
+                newString = LEADING_WHITESPACE.matcher(newString).replaceFirst('')
+            }
+            if (i == indexToTrimEnd) {
+                newString = TRAILING_WHITESPACE.matcher(newString).replaceFirst('')
+            }
+            newStrings[i] = newString
+        }
+        new GStringImpl(gString.values, newStrings)
     }
 
     static GString toSingleLine(final GString self) {
-        final String[] originalStrings = self.strings
-        final String[] newStrings = new String[originalStrings.length]
-        final int indexToTrimEnd = originalStrings.length - 1
-        originalStrings.eachWithIndex {final String originalString, final int i ->
-            String newString = originalString.replaceAll(/\s*\n\s*/, ' ')
-            if (i == 0) {
-                newString = newString.replaceFirst(/^\s/, '')
-            }
-            if (i == indexToTrimEnd) {
-                newString = newString.replaceFirst(/\s$/, '')
-            }
-            newStrings[i] = newString
-        }
-        new GStringImpl(self.values, newStrings)
+        trimAndReplacePattern(self, WHITESPACE_NEWLINE_WHITESPACE)
     }
 
     static GString toSingleCondensedLine(final GString self) {
-        final String[] originalStrings = self.strings
-        final String[] newStrings = new String[originalStrings.length]
-        final int indexToTrimEnd = originalStrings.length - 1
-        originalStrings.eachWithIndex {final String originalString, final int i ->
-            String newString = originalString.replaceAll(/\s{2,}/, ' ')
-            if (i == 0) {
-                newString = newString.replaceFirst(/^\s/, '')
-            }
-            if (i == indexToTrimEnd) {
-                newString = newString.replaceFirst(/\s$/, '')
-            }
-            newStrings[i] = newString
-        }
-        new GStringImpl(self.values, newStrings)
+        trimAndReplacePattern(self, MULTIPLE_WHITESPACE)
     }
 
 }
