@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 class StringToSingleLineSpecification extends Specification {
 
-    def "String.toSingleLine() join lines with no starting and ending newlines"() {
+    def "String.toSingleLine() joins lines with no starting and ending newlines"() {
         given:
         final String noStartEndNewLines = '''first line
                                              second line
