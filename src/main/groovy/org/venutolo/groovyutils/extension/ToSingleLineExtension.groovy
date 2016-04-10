@@ -6,4 +6,8 @@ class ToSingleLineExtension {
         self.trim().replaceAll(/\s{2,}/, ' ')
     }
 
+    static GString toSingleLine(final GString self) {
+        GString.EMPTY
+    }
+
 }
