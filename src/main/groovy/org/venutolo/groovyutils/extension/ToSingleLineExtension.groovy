@@ -13,8 +13,6 @@ import org.codehaus.groovy.runtime.GStringImpl
  * as an internal class and should not be referenced directly. Future versions
  * may move methods in this class to another internal class, but aim to keep
  * the method available from within Groovy.
- *
- * @see org.codehaus.groovy.runtime.DefaultGroovyMethods
  */
 class ToSingleLineExtension {
 
