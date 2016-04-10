@@ -43,19 +43,19 @@ class GStringToSingleLineSpecification extends Specification {
 
     def "GString.toSingleLine() joins lines with single space"() {
         given:
-        final GString multiLineGString = """first ${junk} line
+        final GString multiLine = """first ${junk} line
                                             second line
                                             third line"""
         expect:
-        multiLineGString.toSingleLine() == "first ${junk} line second line third line"
+        multiLine.toSingleLine() == "first ${junk} line second line third line"
     }
 
     def "GString.toSingleLine() condenses multiple whitespace to one space"() {
         given:
-        final GString multipleSpacesGString =
+        final GString multipleSpaces =
                 "before ${junk} multiple whitespace  \t\n\f\r  after multiple whitespace"
         expect:
-        multipleSpacesGString.toSingleLine() ==
+        multipleSpaces.toSingleLine() ==
                 "before ${junk} multiple whitespace after multiple whitespace"
     }
 
