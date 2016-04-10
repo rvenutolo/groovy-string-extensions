@@ -27,11 +27,9 @@ class StringToSingleLineSpecification extends Specification {
     def "String.toSingleLine() does not remove multiple in-line whitespace chars"() {
         given:
         final String multipleInlineWhitespace = '''first \t\f\r line
-                                                   second \t\f\r line
-                                                   third \t\f\r line'''
+                                                   second \t\f\r line'''
         expect:
-        multipleInlineWhitespace.toSingleLine() ==
-                'first \t\f\r line second \t\f\r line third \t\f\r line'
+        multipleInlineWhitespace.toSingleLine() == 'first \t\f\r line second \t\f\r line'
     }
 
     def "String.toSingleLine() removes starting and ending multiple whitespace chars"() {
@@ -39,10 +37,9 @@ class StringToSingleLineSpecification extends Specification {
         final String startEndMultipleWhitespace = '''\t\f\r
                 first line
                 second line
-                third line
         \t\f\r'''
         expect:
-        startEndMultipleWhitespace.toSingleLine() == 'first line second line third line'
+        startEndMultipleWhitespace.toSingleLine() == 'first line second line'
     }
 
 }

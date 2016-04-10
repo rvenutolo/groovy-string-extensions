@@ -47,11 +47,9 @@ class StringToSingleCondensedLineSpecification extends Specification {
 
     def "String.toSingleCondensedLine() condenses multiple whitespace to one space"() {
         given:
-        final String multipleSpaces =
-                'before multiple whitespace  \t\n\f\r  after multiple whitespace'
+        final String multipleSpaces = 'before  \t\n\f\r  after'
         expect:
-        multipleSpaces.toSingleCondensedLine() ==
-        'before multiple whitespace after multiple whitespace'
+        multipleSpaces.toSingleCondensedLine() == 'before after'
     }
 
 }
