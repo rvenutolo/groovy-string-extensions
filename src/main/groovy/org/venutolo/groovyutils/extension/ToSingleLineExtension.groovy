@@ -18,6 +18,10 @@ import org.codehaus.groovy.runtime.GStringImpl
  */
 class ToSingleLineExtension {
 
+    static String toSingleLine(final String self) {
+        self.trim().replaceAll(/\s*\n\s*/, ' ')
+    }
+
     static String toSingleCondensedLine(final String self) {
         self.trim().replaceAll(/\s{2,}/, ' ')
     }
