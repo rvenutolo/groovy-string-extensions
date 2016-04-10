@@ -1,2 +1,2 @@
-# groovy-utils
-Miscellaneous Groovy stuff I may find useful
+# groovy-string-extensions
+Miscellaneous Groovy String and GString extensions I may find useful
