@@ -2,7 +2,7 @@ package org.venutolo.groovyutils.extension
 
 import spock.lang.Specification
 
-class StringToSingleLineSpecification extends Specification{
+class StringToSingleLineSpecification extends Specification {
 
     def "String.toSingleLine() strips multiple leading spaces"() {
         given:
