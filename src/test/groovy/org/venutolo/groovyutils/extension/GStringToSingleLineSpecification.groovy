@@ -9,54 +9,42 @@ class GStringToSingleLineSpecification extends Specification {
     @Shared
     private String junk = ''
 
-    def "GString.toSingleLine() strips multiple leading spaces"() {
+    def "GString.toSingleLine() joins lines with no starting and ending newlines"() {
         given:
-        final GString multipleLeadingSpaces = "\t\n\f\r  multiple ${junk} leading spaces"
+        final GString noStartEndNewLines = """first ${junk} line
+                                             second ${junk} line
+                                             third ${junk} line"""
         expect:
-        multipleLeadingSpaces.toSingleLine() == "multiple ${junk} leading spaces"
+        noStartEndNewLines.toSingleLine() == "first ${junk} line second ${junk} line third ${junk} line"
     }
 
-    def "GString.toSingleLine() strips multiple trailing spaces"() {
+    def "GString.toSingleLine() joins lines with starting and ending newlines"() {
         given:
-        final GString multipleTrailingSpaces = "multiple ${junk} trailing spaces  \t\n\f\r"
+        final GString withStartEndNewlines = """
+                first ${junk} line
+                second ${junk} line
+                third ${junk} line
+        """
         expect:
-        multipleTrailingSpaces.toSingleLine() == "multiple ${junk} trailing spaces"
+        withStartEndNewlines.toSingleLine() == "first ${junk} line second ${junk} line third ${junk} line"
     }
 
-    def "GString.toSingleLine() strips leading newlines and whitespace"() {
+    def "GString.toSingleLine() does not remove multiple in-line whitespace chars"() {
         given:
-        final GString leadingNewlinesAndWhitespace = """
-                \t\n\f\r
-                leading ${junk} newlines and whitespace"""
+        final GString multipleInlineWhitespace = """first ${junk} \t\f\r line
+                                                   second ${junk} \t\f\r line"""
         expect:
-        leadingNewlinesAndWhitespace.toSingleLine() == "leading ${junk} newlines and whitespace"
+        multipleInlineWhitespace.toSingleLine() == "first ${junk} \t\f\r line second ${junk} \t\f\r line"
     }
 
-    def "GString.toSingleLine() strips trailing newlines and whitespace"() {
+    def "GString.toSingleLine() removes starting and ending multiple whitespace chars"() {
         given:
-        final GString trailingNewlineAndWhitespace = """trailing ${junk} newlines and whitespace
-                                                        \t\n\f\r
-                                                     """
+        final GString startEndMultipleWhitespace = """\t\f\r
+                first ${junk} line
+                second ${junk} line
+        \t\f\r"""
         expect:
-        trailingNewlineAndWhitespace.toSingleLine() == "trailing ${junk} newlines and whitespace"
-    }
-
-    def "GString.toSingleLine() joins lines with single space"() {
-        given:
-        final GString multiLine = """first ${junk} line
-                                            second line
-                                            third line"""
-        expect:
-        multiLine.toSingleLine() == "first ${junk} line second line third line"
-    }
-
-    def "GString.toSingleLine() condenses multiple whitespace to one space"() {
-        given:
-        final GString multipleSpaces =
-                "before ${junk} multiple whitespace  \t\n\f\r  after multiple whitespace"
-        expect:
-        multipleSpaces.toSingleLine() ==
-                "before ${junk} multiple whitespace after multiple whitespace"
+        startEndMultipleWhitespace.toSingleLine() == "first ${junk} line second ${junk} line"
     }
 
     def "GString.toSingleLine() does not modify instance"() {
@@ -68,13 +56,13 @@ class GStringToSingleLineSpecification extends Specification {
         original == " ${junk} "
     }
 
-    def "GString.toSingleLine() does not modify GString's values"() {
+    def "GString.toSingleLine() does not modify embedded values"() {
         given:
-        final value = '''
-            some value with multiple   spaces and some newlines
+        final embeddedValue = '''
+            some embeddedValue with multiple   spaces and some newlines
         '''
         expect:
-        "${value}".toSingleLine().toString() == value
+        "${embeddedValue}".toSingleLine().toString() == embeddedValue
     }
 
 }
