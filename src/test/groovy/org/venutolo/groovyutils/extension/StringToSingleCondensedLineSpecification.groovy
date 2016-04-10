@@ -21,8 +21,8 @@ class StringToSingleCondensedLineSpecification extends Specification {
     def "String.toSingleCondensedLine() strips leading newlines and whitespace"() {
         given:
         final String leadingNewlinesAndWhitespace = '''
-            \t\n\f\r
-            leading newlines and whitespace'''
+                \t\n\f\r
+                leading newlines and whitespace'''
         expect:
         leadingNewlinesAndWhitespace.toSingleCondensedLine() == 'leading newlines and whitespace'
     }
@@ -30,8 +30,8 @@ class StringToSingleCondensedLineSpecification extends Specification {
     def "String.toSingleCondensedLine() strips trailing newlines and whitespace"() {
         given:
         final String trailingNewlineAndWhitespace = '''trailing newlines and whitespace
-        \t\n\f\r
-        '''
+                                                       \t\n\f\r
+                                                    '''
         expect:
         trailingNewlineAndWhitespace.toSingleCondensedLine() == 'trailing newlines and whitespace'
     }
@@ -39,8 +39,8 @@ class StringToSingleCondensedLineSpecification extends Specification {
     def "String.toSingleCondensedLine() joins lines with single space"() {
         given:
         final String multiLine = '''first line
-        second line
-        third line'''
+                                    second line
+                                    third line'''
         expect:
         multiLine.toSingleCondensedLine() == 'first line second line third line'
     }
