@@ -1,4 +1,4 @@
-package org.venutolo.groovyutils.extension
+package org.venutolo.groovy.extension
 
 import spock.lang.Shared
 import spock.lang.Specification
