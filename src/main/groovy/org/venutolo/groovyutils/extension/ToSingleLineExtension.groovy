@@ -63,4 +63,12 @@ class ToSingleLineExtension {
         trimAndReplacePattern(self, MULTIPLE_WHITESPACE)
     }
 
+    static String toSingleLineString(final GString self) {
+        self.toString().toSingleLine()
+    }
+
+    static String toSingleCondensedLineString(final GString self) {
+        self.toString().toSingleCondensedLine()
+    }
+
 }
