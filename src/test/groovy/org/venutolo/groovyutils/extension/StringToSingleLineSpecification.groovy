@@ -6,42 +6,43 @@ class StringToSingleLineSpecification extends Specification {
 
     def "String.toSingleLine() join lines with no starting and ending newlines"() {
         given:
-        final String multiLine = '''first line
-                                    second line
-                                    third line'''
+        final String noStartEndNewLines = '''first line
+                                             second line
+                                             third line'''
         expect:
-        multiLine.toSingleLine() == 'first line second line third line'
+        noStartEndNewLines.toSingleLine() == 'first line second line third line'
     }
 
     def "String.toSingleLine() joins lines with starting and ending newlines"() {
         given:
-        final String multiLine = '''
+        final String withStartEndNewlines = '''
                 first line
                 second line
                 third line
         '''
         expect:
-        multiLine.toSingleLine() == 'first line second line third line'
+        withStartEndNewlines.toSingleLine() == 'first line second line third line'
     }
 
     def "String.toSingleLine() does not remove multiple in-line whitespace chars"() {
         given:
-        final String multiLine = '''first \t\f\r line
-                                    second \t\f\r line
-                                    third \t\f\r line'''
+        final String multipleInlineWhitespace = '''first \t\f\r line
+                                                   second \t\f\r line
+                                                   third \t\f\r line'''
         expect:
-        multiLine.toSingleLine() == 'first \t\f\r line second \t\f\r line third \t\f\r line'
+        multipleInlineWhitespace.toSingleLine() ==
+                'first \t\f\r line second \t\f\r line third \t\f\r line'
     }
 
     def "String.toSingleLine() removes starting and ending multiple whitespace chars"() {
         given:
-        final String multiLine = '''\t\f\r
+        final String startEndMultipleWhitespace = '''\t\f\r
                 first line
                 second line
                 third line
         \t\f\r'''
         expect:
-        multiLine.toSingleLine() == 'first line second line third line'
+        startEndMultipleWhitespace.toSingleLine() == 'first line second line third line'
     }
 
 }
