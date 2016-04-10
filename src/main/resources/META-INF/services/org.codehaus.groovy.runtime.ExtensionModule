@@ -1,0 +1,3 @@
+moduleName = ${project.artifactId}-module
+moduleVersion = ${project.version}
+extensionClasses = org.venutolo.groovyutils.extension.ToSingleLineExtension
