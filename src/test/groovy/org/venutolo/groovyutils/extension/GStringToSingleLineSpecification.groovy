@@ -26,8 +26,8 @@ class GStringToSingleLineSpecification extends Specification {
     def "GString.toSingleLine() strips leading newlines and whitespace"() {
         given:
         final GString leadingNewlinesAndWhitespace = """
-            \t\n\f\r
-            leading ${junk} newlines and whitespace"""
+                \t\n\f\r
+                leading ${junk} newlines and whitespace"""
         expect:
         leadingNewlinesAndWhitespace.toSingleLine() == "leading ${junk} newlines and whitespace"
     }
@@ -35,8 +35,8 @@ class GStringToSingleLineSpecification extends Specification {
     def "GString.toSingleLine() strips trailing newlines and whitespace"() {
         given:
         final GString trailingNewlineAndWhitespace = """trailing ${junk} newlines and whitespace
-        \t\n\f\r
-        """
+                                                        \t\n\f\r
+                                                     """
         expect:
         trailingNewlineAndWhitespace.toSingleLine() == "trailing ${junk} newlines and whitespace"
     }
@@ -44,8 +44,8 @@ class GStringToSingleLineSpecification extends Specification {
     def "GString.toSingleLine() joins lines with single space"() {
         given:
         final GString multiLineGString = """first ${junk} line
-        second line
-        third line"""
+                                            second line
+                                            third line"""
         expect:
         multiLineGString.toSingleLine() == "first ${junk} line second line third line"
     }
@@ -59,7 +59,7 @@ class GStringToSingleLineSpecification extends Specification {
                 "before ${junk} multiple whitespace after multiple whitespace"
     }
 
-    def "GString.toSingleLine() does not modify self"() {
+    def "GString.toSingleLine() does not modify instance"() {
         given:
         final GString original = " ${junk} "
         when:
