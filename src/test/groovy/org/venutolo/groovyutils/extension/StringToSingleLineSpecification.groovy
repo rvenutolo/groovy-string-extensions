@@ -38,19 +38,19 @@ class StringToSingleLineSpecification extends Specification{
 
     def "String.toSingleLine() joins lines with single space"() {
         given:
-        final String multiLineString = '''first line
+        final String multiLine = '''first line
         second line
         third line'''
         expect:
-        multiLineString.toSingleLine() == 'first line second line third line'
+        multiLine.toSingleLine() == 'first line second line third line'
     }
 
     def "String.toSingleLine() condenses multiple whitespace to one space"() {
         given:
-        final String multipleSpacesString =
+        final String multipleSpaces =
                 'before multiple whitespace  \t\n\f\r  after multiple whitespace'
         expect:
-        multipleSpacesString.toSingleLine() ==
+        multipleSpaces.toSingleLine() ==
         'before multiple whitespace after multiple whitespace'
     }
 
