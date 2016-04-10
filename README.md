@@ -1,2 +1,2 @@
 # groovy-string-extensions
-Miscellaneous Groovy String and GString extensions I may find useful
+A collection of Groovy extensions for String and GString
