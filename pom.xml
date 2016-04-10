@@ -6,13 +6,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.venutolo</groupId>
-    <artifactId>grovy-utils</artifactId>
+    <artifactId>grovy-string-extensions</artifactId>
     <version>0.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>GroovyUtils</name>
-    <description>A collection of utility code for Groovy stuff.</description>
-    <url>http://github.com/rvenutolo/groovy-utils</url>
+    <name>GroovyStringExtensions</name>
+    <description>A collection of Groovy extensions for String and GString.</description>
+    <url>http://github.com/rvenutolo/groovy-string-extensions</url>
     <inceptionYear>2016</inceptionYear>
 
     <licenses>
@@ -24,19 +24,19 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/rvenutolo/groovy-utils</url>
-        <connection>scm:git:git://github.com/rvenutolo/groovy-utils.git</connection>
-        <developerConnection>scm:git:git@github.com:rvenutolo/groovy-utils.git</developerConnection>
+        <url>https://github.com/rvenutolo/groovy-string-extensions</url>
+        <connection>scm:git:git://github.com/rvenutolo/groovy-string-extensions.git</connection>
+        <developerConnection>scm:git:git@github.com:rvenutolo/groovy-string-extensions.git</developerConnection>
     </scm>
 
     <issueManagement>
         <system>GitHub Issues</system>
-        <url>https://github.com/rvenutolo/groovy-utils/issues</url>
+        <url>https://github.com/rvenutolo/groovy-string-extensions/issues</url>
     </issueManagement>
 
     <ciManagement>
         <system>Travis CI</system>
-        <url>https://travis-ci.org/rvenutolo/groovy-utils</url>
+        <url>https://travis-ci.org/rvenutolo/groovy-string-extensions</url>
     </ciManagement>
 
     <developers>
@@ -120,43 +120,43 @@
                 </executions>
             </plugin>
             <!--<plugin>-->
-                <!--<groupId>org.jacoco</groupId>-->
-                <!--<artifactId>jacoco-maven-plugin</artifactId>-->
-                <!--<version>0.7.5.201505241946</version>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>prepare-agent</id>-->
-                        <!--<goals>-->
-                            <!--<goal>prepare-agent</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
+            <!--<groupId>org.jacoco</groupId>-->
+            <!--<artifactId>jacoco-maven-plugin</artifactId>-->
+            <!--<version>0.7.5.201505241946</version>-->
+            <!--<executions>-->
+            <!--<execution>-->
+            <!--<id>prepare-agent</id>-->
+            <!--<goals>-->
+            <!--<goal>prepare-agent</goal>-->
+            <!--</goals>-->
+            <!--</execution>-->
+            <!--</executions>-->
             <!--</plugin>-->
             <!--<plugin>-->
-                <!--<groupId>org.eluder.coveralls</groupId>-->
-                <!--<artifactId>coveralls-maven-plugin</artifactId>-->
-                <!--<version>4.1.0</version>-->
+            <!--<groupId>org.eluder.coveralls</groupId>-->
+            <!--<artifactId>coveralls-maven-plugin</artifactId>-->
+            <!--<version>4.1.0</version>-->
             <!--</plugin>-->
             <!--<plugin>-->
-                <!--<groupId>org.codehaus.mojo</groupId>-->
-                <!--<artifactId>findbugs-maven-plugin</artifactId>-->
-                <!--<version>3.0.3</version>-->
-                <!--<configuration>-->
-                    <!--<effort>Max</effort>-->
-                    <!--<threshold>Low</threshold>-->
-                    <!--<failOnError>true</failOnError>-->
-                    <!--<xmlOutput>true</xmlOutput>-->
-                    <!--<findbugsXmlOutputDirectory>${project.build.directory}/findbugs</findbugsXmlOutputDirectory>-->
-                <!--</configuration>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>analyze-compile</id>-->
-                        <!--<phase>compile</phase>-->
-                        <!--<goals>-->
-                            <!--<goal>check</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
+            <!--<groupId>org.codehaus.mojo</groupId>-->
+            <!--<artifactId>findbugs-maven-plugin</artifactId>-->
+            <!--<version>3.0.3</version>-->
+            <!--<configuration>-->
+            <!--<effort>Max</effort>-->
+            <!--<threshold>Low</threshold>-->
+            <!--<failOnError>true</failOnError>-->
+            <!--<xmlOutput>true</xmlOutput>-->
+            <!--<findbugsXmlOutputDirectory>${project.build.directory}/findbugs</findbugsXmlOutputDirectory>-->
+            <!--</configuration>-->
+            <!--<executions>-->
+            <!--<execution>-->
+            <!--<id>analyze-compile</id>-->
+            <!--<phase>compile</phase>-->
+            <!--<goals>-->
+            <!--<goal>check</goal>-->
+            <!--</goals>-->
+            <!--</execution>-->
+            <!--</executions>-->
             <!--</plugin>-->
         </plugins>
     </build>
@@ -164,29 +164,29 @@
     <reporting>
         <plugins>
             <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-javadoc-plugin</artifactId>-->
-                <!--<version>2.10.3</version>-->
-                <!--&lt;!&ndash; TODO create overview? &ndash;&gt;-->
-                <!--<configuration>-->
-                    <!--<overview>src/main/overview.html</overview>-->
-                <!--</configuration>-->
+            <!--<groupId>org.apache.maven.plugins</groupId>-->
+            <!--<artifactId>maven-javadoc-plugin</artifactId>-->
+            <!--<version>2.10.3</version>-->
+            <!--&lt;!&ndash; TODO create overview? &ndash;&gt;-->
+            <!--<configuration>-->
+            <!--<overview>src/main/overview.html</overview>-->
+            <!--</configuration>-->
             <!--</plugin>-->
             <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-project-info-reports-plugin</artifactId>-->
-                <!--<version>2.8</version>-->
+            <!--<groupId>org.apache.maven.plugins</groupId>-->
+            <!--<artifactId>maven-project-info-reports-plugin</artifactId>-->
+            <!--<version>2.8</version>-->
             <!--</plugin>-->
             <!--<plugin>-->
-                <!--<groupId>org.codehaus.mojo</groupId>-->
-                <!--<artifactId>findbugs-maven-plugin</artifactId>-->
-                <!--<version>3.0.3</version>-->
-                <!--<configuration>-->
-                    <!--<effort>Max</effort>-->
-                    <!--<threshold>Low</threshold>-->
-                    <!--<xmlOutput>true</xmlOutput>-->
-                    <!--<xmlOutputDirectory>target/site</xmlOutputDirectory>-->
-                <!--</configuration>-->
+            <!--<groupId>org.codehaus.mojo</groupId>-->
+            <!--<artifactId>findbugs-maven-plugin</artifactId>-->
+            <!--<version>3.0.3</version>-->
+            <!--<configuration>-->
+            <!--<effort>Max</effort>-->
+            <!--<threshold>Low</threshold>-->
+            <!--<xmlOutput>true</xmlOutput>-->
+            <!--<xmlOutputDirectory>target/site</xmlOutputDirectory>-->
+            <!--</configuration>-->
             <!--</plugin>-->
         </plugins>
     </reporting>
