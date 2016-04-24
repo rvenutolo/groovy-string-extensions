@@ -18,9 +18,9 @@ import java.util.regex.Pattern
  */
 class ReduceWhitespaceExtension {
 
-    private static final Pattern LEADING_WHITESPACE = ~/^\s/
+    private static final Pattern LEADING_WHITESPACE = ~/^\s+/
 
-    private static final Pattern TRAILING_WHITESPACE = ~/\s$/
+    private static final Pattern TRAILING_WHITESPACE = ~/\s+$/
 
     private static final Pattern MULTIPLE_WHITESPACE = ~/\s{2,}/
 
