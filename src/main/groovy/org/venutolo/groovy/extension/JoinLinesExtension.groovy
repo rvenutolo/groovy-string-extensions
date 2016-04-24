@@ -18,9 +18,9 @@ import java.util.regex.Pattern
  */
 class JoinLinesExtension {
 
-    private static final Pattern LEADING_WHITESPACE = ~/^\s/
+    private static final Pattern LEADING_WHITESPACE = ~/^\s+/
 
-    private static final Pattern TRAILING_WHITESPACE = ~/\s$/
+    private static final Pattern TRAILING_WHITESPACE = ~/\s+$/
 
     private static final Pattern WHITESPACE_NEWLINE_WHITESPACE = ~/\s*\n\s*/
 
