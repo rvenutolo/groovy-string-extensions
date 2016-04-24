@@ -4,13 +4,23 @@ import spock.lang.Specification
 
 class StringJoinLinesExtensionSpecification extends Specification {
 
-    def "joins multiple lines"() {
+    def "joins lines with no starting and ending newlines"() {
         given:
         final String s = '''a
         b
         c'''
         expect:
         s.joinLines() == 'a b c'
+    }
+
+    def "joins/trims lines with starting and ending newlines"() {
+        given:
+        final String s = '''
+        a
+        b
+        '''
+        expect:
+        s.joinLines() == 'a b'
     }
 
     def "does not reduce inline whitespace"() {
@@ -25,16 +35,6 @@ class StringJoinLinesExtensionSpecification extends Specification {
         final String s = ''' ab '''
         expect:
         s.joinLines() == 'ab'
-    }
-
-    def "trims leading or trailing whitespace that contains newline"() {
-        given:
-        final String s = '''
-        a
-        b
-        '''
-        expect:
-        s.joinLines() == 'a b'
     }
 
 }
