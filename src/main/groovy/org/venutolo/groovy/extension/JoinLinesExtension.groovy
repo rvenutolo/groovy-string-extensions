@@ -2,7 +2,7 @@ package org.venutolo.groovy.extension
 
 import java.util.regex.Pattern
 
-class StringJoinLinesExtension {
+class JoinLinesExtension {
 
     private static final Pattern WHITESPACE_NEWLINE_WHITESPACE = ~/\s*\n\s*/
 

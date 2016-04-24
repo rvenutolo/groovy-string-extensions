@@ -1,4 +1,4 @@
 moduleName = ${project.artifactId}-module
 moduleVersion = ${project.version}
 extensionClasses = \
-  org.venutolo.groovy.extension.StringJoinLinesExtension
+  org.venutolo.groovy.extension.JoinLinesExtension
