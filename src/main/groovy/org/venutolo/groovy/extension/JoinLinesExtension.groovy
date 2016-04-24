@@ -24,10 +24,32 @@ class JoinLinesExtension {
 
     private static final Pattern WHITESPACE_NEWLINE_WHITESPACE = ~/\s*\n\s*/
 
+    /**
+     * Trims leading and trailing whitespace and joins lines in a multi-line
+     * String with a single space. This use the Java {@link Pattern} definition
+     * of "whitespace", i.e., matches the '\s' predefined character
+     * class. Any occurrence of a newline character ('\n') surrounded by any
+     * amount of whitespace ('\s') is replaced with a single space.
+     *
+     * @param self a String
+     * @return a trimmed and single-line String
+     */
     static String joinLines(final String self) {
         WHITESPACE_NEWLINE_WHITESPACE.matcher(self.trim()).replaceAll(' ')
     }
 
+    /**
+     * Trims leading and trailing whitespace and joins lines in a multi-line
+     * GString with a single space. This use the Java {@link Pattern}
+     * definition of "whitespace", i.e., matches the '\s' predefined character
+     * class. Any occurrence of a newline character ('\n') surrounded by any
+     * amount of whitespace ('\s') is replaced with a single space. This does
+     * not modify the given GString, nor does it modify the GString's embedded
+     * values.
+     *
+     * @param self a GString
+     * @return a trimmed and single-line GString
+     */
     static GString joinLines(final GString self) {
         final String[] originalStrings = self.strings
         final String[] newStrings = new String[originalStrings.length]
