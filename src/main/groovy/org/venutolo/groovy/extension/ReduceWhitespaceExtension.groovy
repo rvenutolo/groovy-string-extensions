@@ -24,10 +24,29 @@ class ReduceWhitespaceExtension {
 
     private static final Pattern MULTIPLE_WHITESPACE = ~/\s{2,}/
 
+    /**
+     * Trims leading and trailing whitespace and reduces multiple whitespace
+     * characters to one single space. This use the Java {@link Pattern}
+     * definition of "whitespace", i.e., matches the '\s' predefined character
+     * class.
+     *
+     * @param self a String
+     * @return a trimmed and whitespace-reduced String
+     */
     static String reduceWhitespace(final String self) {
         MULTIPLE_WHITESPACE.matcher(self.trim()).replaceAll(' ')
     }
 
+    /**
+     * Trims leading and trailing whitespace and reduces multiple whitespace
+     * characters to one single space. This use the Java {@link Pattern}
+     * definition of "whitespace", i.e., matches the '\s' predefined character
+     * class. This does not modify the given GString, nor does it modify the
+     * GString's embedded values.
+     *
+     * @param self a GString
+     * @return a trimmed and whitespace-reduced GString
+     */
     static GString reduceWhitespace(final GString self) {
         final String[] originalStrings = self.strings
         final String[] newStrings = new String[originalStrings.length]
