@@ -6,9 +6,9 @@ class StringJoinLinesExtensionSpecification extends Specification {
 
     def "Joins lines with no starting and ending newlines"() {
         given:
-        final String s = '''a
-        b
-        c'''
+        final String s = '''a\t\f\r
+        \t\f\rb\t\f\r
+        \t\f\rc'''
         expect:
         s.joinLines() == 'a b c'
     }
@@ -16,8 +16,8 @@ class StringJoinLinesExtensionSpecification extends Specification {
     def "Joins/trims lines with starting and ending newlines"() {
         given:
         final String s = '''
-        a
-        b
+        \t\f\ra\t\f\r
+        \t\f\rb\t\f\r
         '''
         expect:
         s.joinLines() == 'a b'
@@ -25,14 +25,14 @@ class StringJoinLinesExtensionSpecification extends Specification {
 
     def "Does not reduce inline whitespace"() {
         given:
-        final String s = '''a  b'''
+        final String s = 'a \t\f\r b'
         expect:
-        s.joinLines() == 'a  b'
+        s.joinLines() == 'a \t\f\r b'
     }
 
     def "Trims leading or trailing whitespace without newline"() {
         given:
-        final String s = ''' ab '''
+        final String s = ' \t\f\r ab \t\f\r'
         expect:
         s.joinLines() == 'ab'
     }

@@ -11,30 +11,30 @@ class GStringReduceWhitespaceExtensionSpecification extends Specification {
 
     def "Reduces inner whitespace"() {
         given:
-        final GString s = "a  b${junk}"
+        final GString s = "a \t\n\f\r b${junk}"
         expect:
         s.reduceWhitespace() == "a b${junk}"
     }
 
     def "Trims leading and trailing whitespace"() {
         given:
-        final GString s = " ab${junk} "
+        final GString s = " \t\n\f\r ab${junk} \t\n\f\r "
         expect:
         s.reduceWhitespace() == "ab${junk}"
     }
 
     def "Does not modify instance"() {
         given:
-        final GString s = """  ${junk}  """
+        final GString s = "  ${junk}  "
         when:
         s.joinLines()
         then:
-        s == """  ${junk}  """
+        s == "  ${junk}  "
     }
 
     def "Does not modify embedded String"() {
         given:
-        final String embeddedString = '''embedded  string '''
+        final String embeddedString = '  embedded  string  '
         final GString s = "${embeddedString}"
         expect:
         s.joinLines().toString() == embeddedString

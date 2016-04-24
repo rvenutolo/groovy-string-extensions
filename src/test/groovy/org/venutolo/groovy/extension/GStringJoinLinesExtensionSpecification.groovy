@@ -9,37 +9,37 @@ class GStringJoinLinesExtensionSpecification extends Specification {
     @Shared
     private String junk = ''
 
-    def "Joins multiple lines"() {
+    def "Joins lines with no starting and ending newlines"() {
         given:
-        final GString s = """a${junk}
-        b${junk}
-        c${junk}"""
+        final GString s = """a${junk}\t\f\r
+        \t\f\rb${junk}\t\f\r
+        \t\f\rc${junk}"""
         expect:
         s.joinLines() == "a${junk} b${junk} c${junk}"
     }
 
+    def "Joins/trims lines with starting and ending newlines"() {
+        given:
+        final GString s = """
+        \t\f\ra${junk}\t\f\r
+        \t\f\rb${junk}\t\f\r
+        """
+        expect:
+        s.joinLines() == "a${junk} b${junk}"
+    }
+
     def "Does not reduce inline whitespace"() {
         given:
-        final GString s = "a${junk}  b${junk}"
+        final GString s = "a${junk} \t\f\r b${junk}"
         expect:
-        s.joinLines() == "a${junk}  b${junk}"
+        s.joinLines() == "a${junk} \t\f\r b${junk}"
     }
 
     def "Trims leading or trailing whitespace without newline"() {
         given:
-        final GString s = " a${junk}b${junk} "
+        final GString s = " \t\f\r a${junk}b${junk} \t\f\r "
         expect:
         s.joinLines() == "a${junk}b${junk}"
-    }
-
-    def "Trims leading or trailing whitespace that contains newline"() {
-        given:
-        final GString s = """
-        a${junk}
-        b${junk}
-        """
-        expect:
-        s.joinLines() == "a${junk} b${junk}"
     }
 
     def "Does not modify instance"() {
