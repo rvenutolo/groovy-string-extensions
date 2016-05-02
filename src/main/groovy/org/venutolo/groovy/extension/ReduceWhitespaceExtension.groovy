@@ -12,7 +12,7 @@ import java.util.regex.Pattern
  * <p>
  * NOTE: While this class contains many 'public' static methods, it is intended as an internal class
  * and should not be referenced directly. Future versions may move methods in this class to another
- * internal class, but aim to keep the method available from within Groovy.
+ * internal class, but aim to keep the methods available from within Groovy.
  */
 class ReduceWhitespaceExtension {
 
