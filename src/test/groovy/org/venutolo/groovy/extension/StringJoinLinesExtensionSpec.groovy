@@ -2,7 +2,7 @@ package org.venutolo.groovy.extension
 
 import spock.lang.Specification
 
-class StringJoinLinesExtensionSpecification extends Specification {
+class StringJoinLinesExtensionSpec extends Specification {
 
     def "Joins lines with no starting and ending newlines"() {
         given:

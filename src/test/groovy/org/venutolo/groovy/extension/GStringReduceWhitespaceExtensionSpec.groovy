@@ -3,7 +3,7 @@ package org.venutolo.groovy.extension
 import spock.lang.Shared
 import spock.lang.Specification
 
-class GStringReduceWhitespaceExtensionSpecification extends Specification {
+class GStringReduceWhitespaceExtensionSpec extends Specification {
 
     // this is just used to force creation of GStrings
     @Shared

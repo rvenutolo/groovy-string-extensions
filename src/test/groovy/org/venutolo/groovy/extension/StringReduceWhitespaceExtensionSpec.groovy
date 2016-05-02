@@ -2,7 +2,7 @@ package org.venutolo.groovy.extension
 
 import spock.lang.Specification
 
-class StringReduceWhitespaceExtensionSpecification extends Specification {
+class StringReduceWhitespaceExtensionSpec extends Specification {
 
     def "Reduces inner whitespace"() {
         given:

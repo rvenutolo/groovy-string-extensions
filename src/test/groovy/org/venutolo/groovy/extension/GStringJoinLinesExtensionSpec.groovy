@@ -3,7 +3,7 @@ package org.venutolo.groovy.extension
 import spock.lang.Shared
 import spock.lang.Specification
 
-class GStringJoinLinesExtensionSpecification extends Specification {
+class GStringJoinLinesExtensionSpec extends Specification {
 
     // this is just used to force creation of GStrings
     @Shared
