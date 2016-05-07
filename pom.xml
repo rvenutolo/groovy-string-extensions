@@ -86,6 +86,8 @@
     <build>
         <resources>
             <resource>
+                <!-- This filters the ExtensionModule resource file to use
+                artifactId and version values in module name and version -->
                 <directory>src/main/resources</directory>
                 <filtering>true</filtering>
             </resource>
