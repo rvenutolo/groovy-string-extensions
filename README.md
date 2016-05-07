@@ -1,7 +1,7 @@
 # groovy-string-extensions
 A (very small) collection of Groovy (v2.0+) extensions for String and GString. 
 
-__Note:__ The GString methods do not modify the GString instance, and instead return a separate GString instance. Values embedded in the GString are not modified.
+__Note:__ The GString methods do not modify the GString instance, and instead return a separate GString instance. The GString methods also do not modify the embedded values.
 
 ## Extensions Methods
 
