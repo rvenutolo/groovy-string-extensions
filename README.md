@@ -1,5 +1,7 @@
 # groovy-string-extensions
-A (very small) collection of Groovy (v2.0+) extensions for String and GString.
+A (very small) collection of Groovy (v2.0+) extensions for String and GString. 
+
+__Note:__ The GString methods do not mutate the GString instance.
 
 ## Extensions Methods
 
