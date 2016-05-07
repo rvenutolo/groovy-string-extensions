@@ -130,7 +130,8 @@
                 <version>2.19.1</version>
                 <configuration>
                     <includes>
-                        <!-- By default only files ending in 'Test' will be included, so also include support for Spock style naming convention -->
+                        <!-- By default only files ending in 'Test' will be included,
+                        so also include support for Spock style naming convention -->
                         <include>**/*Test.class</include>
                         <include>**/*Spec.class</include>
                         <include>**/*Specification.class</include>
