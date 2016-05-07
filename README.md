@@ -18,12 +18,12 @@ Provides a method to trim leading and trailing whitespace and join multiple with
 
 ```groovy
 String s = '''
-    This is a multi-line string
+    This is a multi-line String
     that I want to join into one
     single line.
 '''
 
-assert s.joinLines() == 'This is a multi-line string that I want to join into one single line.'
+assert s.joinLines() == 'This is a multi-line String that I want to join into one single line.'
 ```
     
 ### `.reduceWhitespace()`
@@ -38,12 +38,12 @@ Provides a method to trim leading and trailing whitespace and reduce multiple wh
 #### Example:
 
 ```groovy
-GString query = '''
+GString query = """
     SELECT *
     FROM   cities
     WHERE  country = ${country}
     AND    region  = ${region}
-'''
+"""
 
 assert query.reduceWhitespace() == 'SELECT * FROM cities WHERE country = ${country} AND region = ${region}'
 ```
