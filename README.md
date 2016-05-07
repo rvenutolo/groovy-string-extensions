@@ -7,11 +7,6 @@ __Note:__ The GString methods do not mutate the GString instance.
 
 ### `.joinLines()`
 
-```groovy
-static String joinLines(String self)
-static GString joinLines(GString self)
-```
-    
 Provides a method to trim leading and trailing whitespace and join multiple with a single space.
 
 #### Example:
@@ -28,11 +23,6 @@ assert s.joinLines() == 'This is a multi-line string that I want to join into on
     
 ### `.reduceWhitespace()`
 
-```groovy
-static String reduceWhitespace(String self)
-static String reduceWhitespace(GString self)
-```
-    
 Provides a method to trim leading and trailing whitespace and reduce multiple whitespace characters to one single space.
 
 #### Example:
