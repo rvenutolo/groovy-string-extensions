@@ -112,17 +112,29 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>1.4.1</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>extra-enforcer-rules</artifactId>
+                        <version>1.0-beta-4</version>
+                    </dependency>
+                </dependencies>
+                <configuration>
+                    <rules>
+                        <dependencyConvergence>
+                            <uniqueVersions>false</uniqueVersions>
+                        </dependencyConvergence>
+                        <banCircularDependencies/>
+                    </rules>
+                    <fail>true</fail>
+                </configuration>
                 <executions>
                     <execution>
-                        <id>enforce-versions</id>
+                        <id>enforce</id>
                         <goals>
                             <goal>enforce</goal>
                         </goals>
-                        <configuration>
-                            <rules>
-                                <dependencyConvergence/>
-                            </rules>
-                        </configuration>
+                        <phase>validate</phase>
                     </execution>
                 </executions>
             </plugin>
