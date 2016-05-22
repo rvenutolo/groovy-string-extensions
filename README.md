@@ -1,5 +1,8 @@
 # groovy-string-extensions
-A (very small) collection of Groovy (v2.0+) extensions for String and GString. 
+[![License](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/rvenutolo/groovy-string-extensions/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/rvenutolo/groovy-string-extensions.svg?branch=master)](https://travis-ci.org/rvenutolo/groovy-string-extensions)
+
+A (very small) collection of Groovy (v2.0+) extensions for String and GString.
 
 __Note:__ The GString methods do not modify the GString instance, and instead return a separate GString instance. The GString methods also do not modify the embedded values.
 
@@ -25,7 +28,7 @@ String s = '''
 
 assert s.joinLines() == 'This is a multi-line String that I want to join into one single line.'
 ```
-    
+
 ### `.reduceWhitespace()`
 
 ```groovy
