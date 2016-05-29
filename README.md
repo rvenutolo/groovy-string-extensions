@@ -1,6 +1,7 @@
 # groovy-string-extensions
 [![License](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/rvenutolo/groovy-string-extensions/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/rvenutolo/groovy-string-extensions.svg?branch=master)](https://travis-ci.org/rvenutolo/groovy-string-extensions)
+[![Coverage Status](https://coveralls.io/repos/github/rvenutolo/groovy-string-extensions/badge.svg?branch=master)](https://coveralls.io/github/rvenutolo/groovy-string-extensions?branch=master)
 [![Sputnik](https://sputnik.ci/conf/badge)](https://sputnik.ci/app#/builds/rvenutolo/groovy-string-extensions)
 
 A (very small) collection of Groovy (v2.0+) extensions for String and GString.
