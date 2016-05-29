@@ -27,7 +27,7 @@ class GStringTrimAndCollapseWhitespaceExtensionSpec extends Specification {
         given:
         final GString s = "  ${junk}  "
         when:
-        s.joinLines()
+        s.trimAndCollapseWhitespace()
         then:
         s == "  ${junk}  "
     }
@@ -37,7 +37,7 @@ class GStringTrimAndCollapseWhitespaceExtensionSpec extends Specification {
         final String embeddedString = '  embedded  string  '
         final GString s = "${embeddedString}"
         expect:
-        s.joinLines().toString() == embeddedString
+        s.trimAndCollapseWhitespace().toString() == embeddedString
     }
 
 }
