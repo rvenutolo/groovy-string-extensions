@@ -4,8 +4,7 @@
 
 A (very small) collection of Groovy (v2.0+) extensions for String and GString.
 
-__Note:__ The GString methods do not modify the GString instance, and instead return a separate
-GString instance. The GString methods also do not modify the embedded values.
+__Note:__ The GString methods do not modify the GString instance, and instead return a separate GString instance. The GString methods also do not modify the embedded values.
 
 ## Extensions Methods
 
@@ -37,8 +36,7 @@ static String trimAndCollapseWhitespace(String self)
 static String trimAndCollapseWhitespace(GString self)
 ```
 
-Provides a method to trim leading and trailing whitespace and collapse multiple whitespace
-characters to one single space.
+Provides a method to trim leading and trailing whitespace and collapse multiple whitespace characters to one single space.
 
 #### Example:
 
@@ -50,6 +48,5 @@ GString query = """
     AND    region  = ${region}
 """
 
-assert query.trimAndCollapseWhitespace() == 'SELECT * FROM cities WHERE country = ${country} AND
-region = ${region}'
+assert query.trimAndCollapseWhitespace() == 'SELECT * FROM cities WHERE country = ${country} AND region = ${region}'
 ```
