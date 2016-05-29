@@ -125,6 +125,7 @@
                             <uniqueVersions>false</uniqueVersions>
                         </dependencyConvergence>
                         <banCircularDependencies/>
+                        <banDuplicateClasses/>
                     </rules>
                     <fail>true</fail>
                 </configuration>
