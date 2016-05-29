@@ -2,4 +2,4 @@ moduleName=${project.artifactId}-module
 moduleVersion=${project.version}
 extensionClasses=\
   org.venutolo.groovy.extension.JoinLinesExtension, \
-  org.venutolo.groovy.extension.ReduceWhitespaceExtension
+  org.venutolo.groovy.extension.TrimAndCollapseWhitespaceExtension

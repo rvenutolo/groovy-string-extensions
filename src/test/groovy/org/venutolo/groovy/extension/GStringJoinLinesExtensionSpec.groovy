@@ -28,7 +28,7 @@ class GStringJoinLinesExtensionSpec extends Specification {
         s.joinLines() == "a${junk} b${junk}"
     }
 
-    def "Does not reduce inline whitespace"() {
+    def "Does not collapse inline whitespace"() {
         given:
         final GString s = "a${junk} \t\f\r b${junk}"
         expect:

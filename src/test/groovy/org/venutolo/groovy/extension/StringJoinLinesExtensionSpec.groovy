@@ -23,7 +23,7 @@ class StringJoinLinesExtensionSpec extends Specification {
         s.joinLines() == 'a b'
     }
 
-    def "Does not reduce inline whitespace"() {
+    def "Does not collapse inline whitespace"() {
         given:
         final String s = 'a \t\f\r b'
         expect:

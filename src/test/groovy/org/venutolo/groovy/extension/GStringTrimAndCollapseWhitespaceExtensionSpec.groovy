@@ -3,7 +3,7 @@ package org.venutolo.groovy.extension
 import spock.lang.Shared
 import spock.lang.Specification
 
-class GStringReduceWhitespaceExtensionSpec extends Specification {
+class GStringTrimAndCollapseWhitespaceExtensionSpec extends Specification {
 
     // this is just used to force creation of GStrings
     @Shared
@@ -13,14 +13,14 @@ class GStringReduceWhitespaceExtensionSpec extends Specification {
         given:
         final GString s = "a \t\n\f\r b${junk}"
         expect:
-        s.reduceWhitespace() == "a b${junk}"
+        s.trimAndCollapseWhitespace() == "a b${junk}"
     }
 
     def "Trims leading and trailing whitespace"() {
         given:
         final GString s = " \t\n\f\r ab${junk} \t\n\f\r "
         expect:
-        s.reduceWhitespace() == "ab${junk}"
+        s.trimAndCollapseWhitespace() == "ab${junk}"
     }
 
     def "Does not modify instance"() {

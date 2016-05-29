@@ -2,20 +2,20 @@ package org.venutolo.groovy.extension
 
 import spock.lang.Specification
 
-class StringReduceWhitespaceExtensionSpec extends Specification {
+class StringTrimAndCollapseWhitespaceExtensionSpec extends Specification {
 
     def "Reduces inner whitespace"() {
         given:
         final String s = 'a \t\n\f\r b'
         expect:
-        s.reduceWhitespace() == 'a b'
+        s.trimAndCollapseWhitespace() == 'a b'
     }
 
     def "Trims leading and trailing whitespace"() {
         given:
         final String s = ' \t\n\f\r ab \t\n\f\r '
         expect:
-        s.reduceWhitespace() == 'ab'
+        s.trimAndCollapseWhitespace() == 'ab'
     }
 
 }
