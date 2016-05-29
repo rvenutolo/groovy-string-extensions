@@ -48,5 +48,5 @@ GString query = """
     AND    region  = ${region}
 """
 
-assert query.trimAndCollapseWhitespace() == 'SELECT * FROM cities WHERE country = ${country} AND region = ${region}'
+assert query.trimAndCollapseWhitespace() == "SELECT * FROM cities WHERE country = ${country} AND region = ${region}"
 ```
