@@ -97,6 +97,9 @@
                 <groupId>org.codehaus.gmavenplus</groupId>
                 <artifactId>gmavenplus-plugin</artifactId>
                 <version>1.5</version>
+                <configuration>
+                    <configScript>src/conf/config.groovy</configScript>
+                </configuration>
                 <executions>
                     <execution>
                         <goals>
