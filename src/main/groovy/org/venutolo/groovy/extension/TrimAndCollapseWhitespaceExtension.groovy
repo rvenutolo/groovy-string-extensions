@@ -5,10 +5,11 @@ import org.codehaus.groovy.runtime.GStringImpl
 import java.util.regex.Pattern
 
 /**
- * This class defines new groovy methods which appear on {@code String} and {@code GString} classes
- * inside the Groovy environment. Static methods are used with the first parameter being the
- * destination class, i.e. {@code public static String trimAndCollapseWhitespace(String self)}
- * provides a {@code trimAndCollapseWhitespace()} method for {@code String}.
+ * This class defines new {@code trimAndCollapseWhitespace()} methods which appear on {@code String}
+ * and {@code GString} classes inside the Groovy environment. Static methods are used with the first
+ * parameter being the destination class, i.e. {@code public static String
+ * trimAndCollapseWhitespace(String self)} provides a {@code trimAndCollapseWhitespace()} method for
+ * {@code String}.
  * <p>
  * NOTE: While this class contains many 'public' static methods, it is intended as an internal class
  * and should not be referenced directly. Future versions may move methods in this class to another
