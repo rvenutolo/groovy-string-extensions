@@ -1,5 +1,8 @@
 import groovy.transform.CompileStatic
 
 withConfig(configuration) {
-    ast(CompileStatic)
+    // apply @CompileStatic to non-test classes
+    source(basenameValidator: {!it.endsWith('Spec')}) {
+        ast(CompileStatic)
+    }
 }
