@@ -9,7 +9,7 @@ class GStringTrimAndCollapseWhitespaceExtensionSpec extends Specification {
     @Shared
     private String junk = ''
 
-    def "Reduces inner whitespace"() {
+    def "Collapses inner whitespace"() {
         given:
         final GString s = "a \t\n\f\r b${junk}"
         expect:

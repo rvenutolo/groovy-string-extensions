@@ -4,7 +4,7 @@ import spock.lang.Specification
 
 class StringTrimAndCollapseWhitespaceExtensionSpec extends Specification {
 
-    def "Reduces inner whitespace"() {
+    def "Collapses inner whitespace"() {
         given:
         final String s = 'a \t\n\f\r b'
         expect:
