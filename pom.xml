@@ -101,14 +101,30 @@
                 <version>1.5</version>
                 <configuration>
                     <configScript>src/conf/config.groovy</configScript>
+                    <groovydocOutputDirectory>${project.reporting.outputDirectory}/apidocs</groovydocOutputDirectory>
+                    <testGroovydocOutputDirectory>${project.reporting.outputDirectory}/testapidocs</testGroovydocOutputDirectory>
+                    <scope>package</scope>
                 </configuration>
                 <executions>
                     <execution>
+                        <id>compileGroovy</id>
                         <goals>
                             <goal>addSources</goal>
                             <goal>addTestSources</goal>
+                            <goal>generateStubs</goal>
                             <goal>compile</goal>
+                            <goal>testGenerateStubs</goal>
                             <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>siteGroovy</id>
+                        <phase>site</phase>
+                        <goals>
+                            <goal>groovydoc</goal>
+                            <goal>testGroovydoc</goal>
+                            <goal>removeStubs</goal>
+                            <goal>removeTestStubs</goal>
                         </goals>
                     </execution>
                 </executions>
