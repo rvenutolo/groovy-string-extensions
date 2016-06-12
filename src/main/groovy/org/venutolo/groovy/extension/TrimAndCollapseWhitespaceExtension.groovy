@@ -15,7 +15,10 @@ import java.util.regex.Pattern
  * and should not be referenced directly. Future versions may move methods in this class to another
  * internal class, but aim to keep the methods available from within Groovy.
  */
-class TrimAndCollapseWhitespaceExtension {
+final class TrimAndCollapseWhitespaceExtension {
+
+    private TrimAndCollapseWhitespaceExtension() {
+    }
 
     private static final Pattern LEADING_WHITESPACE = ~/^\s+/
 
