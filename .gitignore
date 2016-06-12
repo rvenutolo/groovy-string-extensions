@@ -1,6 +1,3 @@
-# Maven site build copies README.md for site index page
-src/site/markdown/index.md
-
 # Created by .ignore support plugin (hsz.mobi)
 
 ### Java template
