@@ -51,6 +51,11 @@
         </developer>
     </developers>
 
+    <prerequisites>
+        <!-- codenarc plugin 0.22-1+ requires 3.0.1+ -->
+        <maven>3.0.1</maven>
+    </prerequisites>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
