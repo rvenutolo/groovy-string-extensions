@@ -107,11 +107,19 @@
                     <groovydocOutputDirectory>${project.reporting.outputDirectory}/apidocs</groovydocOutputDirectory>
                     <testGroovydocOutputDirectory>${project.reporting.outputDirectory}/testapidocs</testGroovydocOutputDirectory>
                     <scope>package</scope>
-                    <!-- TODO get this to work -->
                     <links>
-                        <link packages="java.,javax.,java.lang" href="http://docs.oracle.com/javase/6/docs/api/"/>
-                        <link packages="groovy.,org.codehaus.groovy." href="http://docs.groovy-lang.org/latest/html/api/"/>
-                        <link packages="spock." href="http://spockframework.github.io/spock/javadoc/1.0/"/>
+                        <link>
+                            <packages>java,javax,org.ietf.jgss,org.omg,org.w3c,org.xml</packages>
+                            <href>http://docs.oracle.com/javase/6/docs/api/</href>
+                        </link>
+                        <link>
+                            <packages>org.codehaus.groovy,groovy</packages>
+                            <href>http://docs.groovy-lang.org/latest/html/api/</href>
+                        </link>
+                        <link>
+                            <packages>spock</packages>
+                            <href>http://spockframework.github.io/spock/javadoc/1.0/</href>
+                        </link>
                     </links>
                 </configuration>
                 <executions>
