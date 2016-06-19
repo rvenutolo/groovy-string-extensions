@@ -364,8 +364,8 @@
                         <email>license@venutolo.org</email>
                     </properties>
                     <includes>
-                        <include>src/main/**</include>
-                        <include>src/test/**</include>
+                        <include>src/main/groovy/**</include>
+                        <include>src/test/groovy/**</include>
                     </includes>
                 </configuration>
                 <executions>
