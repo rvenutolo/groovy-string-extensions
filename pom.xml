@@ -150,13 +150,13 @@
                     </execution>
                     <execution>
                         <id>site-groovydoc</id>
-                        <phase>site</phase>
+                        <phase>pre-site</phase>
                         <goals>
                             <goal>groovydoc</goal>
                             <goal>testGroovydoc</goal>
                         </goals>
                         <configuration>
-                            <!-- set output directories to those used in site build -->
+                            <!-- set output directories to those used by javadoc plugin for site build -->
                             <groovydocOutputDirectory>${project.reporting.outputDirectory}/apidocs</groovydocOutputDirectory>
                             <testGroovydocOutputDirectory>${project.reporting.outputDirectory}/testapidocs</testGroovydocOutputDirectory>
                         </configuration>
@@ -258,6 +258,10 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>2.10.4</version>
+                <!-- skip javadoc generation as groovydoc is generated elsewhere -->
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
