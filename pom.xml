@@ -326,6 +326,8 @@
                         </executions>
                     </plugin>
                     <plugin>
+                        <!-- using this instead of groovydoc-maven-plugin because
+                        I prefer the groovydoc output by gplus (mostly links config) -->
                         <artifactId>maven-assembly-plugin</artifactId>
                         <version>2.6</version>
                         <executions>
