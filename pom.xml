@@ -367,17 +367,6 @@
                                 <configuration>
                                     <descriptors>
                                         <descriptor>src/assembly/javadoc-jar.xml</descriptor>
-                                    </descriptors>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>attach-testdoc</id>
-                                <phase>package</phase>
-                                <goals>
-                                    <goal>single</goal>
-                                </goals>
-                                <configuration>
-                                    <descriptors>
                                         <descriptor>src/assembly/test-javadoc-jar.xml</descriptor>
                                     </descriptors>
                                 </configuration>
