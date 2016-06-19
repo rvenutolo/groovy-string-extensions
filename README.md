@@ -4,6 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/rvenutolo/groovy-string-extensions/badge.svg?branch=master)](https://coveralls.io/github/rvenutolo/groovy-string-extensions?branch=master)
 [![Dependency Status](https://www.versioneye.com/user/projects/57670911276f0f00498e3bca/badge.svg?style=flat)](https://www.versioneye.com/user/projects/57670911276f0f00498e3bca)
 [![Sputnik](https://sputnik.ci/conf/badge)](https://sputnik.ci/app#/builds/rvenutolo/groovy-string-extensions)
+[![Javadoc](http://javadoc-badge.appspot.com/org.venutolo/groovy-string-extensions.svg?label=javadoc)](https://rvenutolo.github.io/groovy-string-extensions/snapshot/apidocs)
 
 A (very small) collection of Groovy (v2.0+) extensions for String and GString.
 
