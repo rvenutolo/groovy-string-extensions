@@ -103,14 +103,19 @@
                 <artifactId>gmavenplus-plugin</artifactId>
                 <version>1.5</version>
                 <configuration>
+                    <!-- add @CompileStatic to non-Spec clasess -->
                     <configScript>src/conf/config.groovy</configScript>
+                    <!-- set output directories to those used in site build -->
                     <groovydocOutputDirectory>${project.reporting.outputDirectory}/apidocs</groovydocOutputDirectory>
                     <testGroovydocOutputDirectory>${project.reporting.outputDirectory}/testapidocs</testGroovydocOutputDirectory>
+                    <!-- groovydoc titles/footer/header -->
                     <windowTitle>${project.groupId}:${project.artifactId}:${project.version}</windowTitle>
                     <docTitle>${project.groupId}:${project.artifactId}:${project.version}</docTitle>
                     <footer>${project.groupId}:${project.artifactId}:${project.version}</footer>
                     <header>${project.groupId}:${project.artifactId}:${project.version}</header>
+                    <!-- the scope to generate groovydoc for -->
                     <scope>package</scope>
+                    <!-- these are package links in groovydoc, ex: java.lang.String links to Java API -->
                     <links>
                         <link>
                             <packages>java,javax,org.ietf.jgss,org.omg,org.w3c,org.xml</packages>
