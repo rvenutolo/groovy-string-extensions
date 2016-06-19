@@ -1,10 +1,12 @@
 # groovy-string-extensions
-[![License](https://img.shields.io/hexpm/l/plug.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Build Status](https://travis-ci.org/rvenutolo/groovy-string-extensions.svg?branch=master)](https://travis-ci.org/rvenutolo/groovy-string-extensions)
 [![Coverage Status](https://coveralls.io/repos/github/rvenutolo/groovy-string-extensions/badge.svg?branch=master)](https://coveralls.io/github/rvenutolo/groovy-string-extensions?branch=master)
 [![Dependency Status](https://www.versioneye.com/user/projects/57670911276f0f00498e3bca/badge.svg?style=flat)](https://www.versioneye.com/user/projects/57670911276f0f00498e3bca)
+
 [![Maven Site](https://img.shields.io/badge/Maven%20Site-0.1.0--SNAPSHOT-brightgreen.svg)](https://rvenutolo.github.io/groovy-string-extensions/snapshot/)
 [![Groovydoc](https://img.shields.io/badge/Groovydoc-0.1.0--SNAPSHOT-blue.svg)](https://rvenutolo.github.io/groovy-string-extensions/snapshot/apidocs/)
+
+[![License](https://img.shields.io/hexpm/l/plug.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Sputnik](https://sputnik.ci/conf/badge)](https://sputnik.ci/app#/builds/rvenutolo/groovy-string-extensions)
 
 A (very small) collection of Groovy (v2.0+) extensions for String and GString.
