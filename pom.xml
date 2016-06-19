@@ -177,9 +177,11 @@
                 <configuration>
                     <rules>
                         <requireMavenVersion>
-                            <version>[3.0.0,)</version>
+                            <!-- codenarc plugin 0.22-1+ requires 3.0.1+ -->
+                            <version>[3.0.1,)</version>
                         </requireMavenVersion>
                         <requireJavaVersion>
+                            <!-- groovy 2.4.0+ requires 1.6+ -->
                             <version>[1.6,)</version>
                         </requireJavaVersion>
                         <dependencyConvergence>
