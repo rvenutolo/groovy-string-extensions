@@ -106,6 +106,10 @@
                     <configScript>src/conf/config.groovy</configScript>
                     <groovydocOutputDirectory>${project.reporting.outputDirectory}/apidocs</groovydocOutputDirectory>
                     <testGroovydocOutputDirectory>${project.reporting.outputDirectory}/testapidocs</testGroovydocOutputDirectory>
+                    <windowTitle>${project.groupId}:${project.artifactId}:${project.version}</windowTitle>
+                    <docTitle>${project.groupId}:${project.artifactId}:${project.version}</docTitle>
+                    <footer>${project.groupId}:${project.artifactId}:${project.version}</footer>
+                    <header>${project.groupId}:${project.artifactId}:${project.version}</header>
                     <scope>package</scope>
                     <links>
                         <link>
