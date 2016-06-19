@@ -194,7 +194,7 @@
                 <executions>
                     <execution>
                         <!-- This copies the README.md file to the site dir and
-                        renamed it to index.md for site generation. -->
+                        renames it to index.md for site generation. -->
                         <id>copy-readme-to-index</id>
                         <phase>pre-site</phase>
                         <goals>
@@ -203,19 +203,6 @@
                         <configuration>
                             <sourceFile>README.md</sourceFile>
                             <destinationFile>src/site/markdown/index.md</destinationFile>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <!-- This basically undoes the above execution. This
-                        deletes the site index file by renaming the file. -->
-                        <id>delete-index</id>
-                        <phase>site</phase>
-                        <goals>
-                            <goal>rename</goal>
-                        </goals>
-                        <configuration>
-                            <sourceFile>src/site/markdown/index.md</sourceFile>
-                            <destinationFile>README.md</destinationFile>
                         </configuration>
                     </execution>
                 </executions>
