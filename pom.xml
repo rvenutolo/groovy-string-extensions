@@ -372,8 +372,10 @@
                         <owner>Rick Venutolo</owner>
                     </properties>
                     <includes>
-                        <include>${project.basedir}/src/main/groovy/**</include>
-                        <include>${project.basedir}/src/test/groovy/**</include>
+                        <!-- can't use ${project.basedir}/src/main/groovy/**
+                         or ${project.build.sourceDirectory}/** for some reason -->
+                        <include>src/main/groovy/**</include>
+                        <include>src/test/groovy/**</include>
                     </includes>
                 </configuration>
                 <executions>
