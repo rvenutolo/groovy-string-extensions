@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Groovy-string-extensions : A (very small) collection of Groovy (v2.0+) extensions for String and GString. ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Groovy-string-extensions</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/rvenutolo/groovy-string-extensions">View on GitHub</a>
+
+          <h1 id="project_title">Groovy-string-extensions</h1>
+          <h2 id="project_tagline">A (very small) collection of Groovy (v2.0+) extensions for String and GString. </h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/rvenutolo/groovy-string-extensions/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/rvenutolo/groovy-string-extensions/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="groovy-string-extensions" class="anchor" href="#groovy-string-extensions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>groovy-string-extensions</h1>
+
+<p><a href="https://travis-ci.org/rvenutolo/groovy-string-extensions"><img src="https://travis-ci.org/rvenutolo/groovy-string-extensions.svg?branch=master" alt="Build Status"></a>
+<a href="https://coveralls.io/github/rvenutolo/groovy-string-extensions?branch=master"><img src="https://coveralls.io/repos/github/rvenutolo/groovy-string-extensions/badge.svg?branch=master" alt="Coverage Status"></a>
+<a href="https://www.versioneye.com/user/projects/57670911276f0f00498e3bca"><img src="https://www.versioneye.com/user/projects/57670911276f0f00498e3bca/badge.svg?style=flat" alt="Dependency Status"></a></p>
+
+<p><a href="https://rvenutolo.github.io/groovy-string-extensions/snapshot/"><img src="https://img.shields.io/badge/Maven%20Site-0.1.0--SNAPSHOT-brightgreen.svg" alt="Maven Site"></a>
+<a href="https://rvenutolo.github.io/groovy-string-extensions/snapshot/apidocs/"><img src="https://img.shields.io/badge/Groovydoc-0.1.0--SNAPSHOT-blue.svg" alt="Groovydoc"></a></p>
+
+<p><a href="https://www.apache.org/licenses/LICENSE-2.0"><img src="https://img.shields.io/hexpm/l/plug.svg" alt="License"></a>
+<a href="https://sputnik.ci/app#/builds/rvenutolo/groovy-string-extensions"><img src="https://sputnik.ci/conf/badge" alt="Sputnik"></a></p>
+
+<p>A (very small) collection of Groovy (v2.0+) extensions for String and GString.</p>
+
+<p><strong>Note:</strong> The GString methods do not modify the GString instance, and instead return a separate GString instance. The GString methods also do not modify the embedded values.</p>
+
+<h2>
+<a id="extensions-methods" class="anchor" href="#extensions-methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Extensions Methods</h2>
+
+<h3>
+<a id="joinlines" class="anchor" href="#joinlines" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>.joinLines()</code>
+</h3>
+
+<div class="highlight highlight-source-groovy"><pre><span class="pl-k">static</span> <span class="pl-k">String</span> <span class="pl-en">joinLines</span>(<span class="pl-k">String</span> <span class="pl-v">self</span>)
+<span class="pl-k">static</span> <span class="pl-k">GString</span> <span class="pl-en">joinLines</span>(<span class="pl-k">GString</span> <span class="pl-v">self</span>)</pre></div>
+
+<p>Provides a method to trim leading and trailing whitespace and join multiple with a single space.</p>
+
+<h4>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example:</h4>
+
+<div class="highlight highlight-source-groovy"><pre><span class="pl-k">String</span> s <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">'''</span></span>
+<span class="pl-s">    This is a multi-line String</span>
+<span class="pl-s">    that I want to join into one</span>
+<span class="pl-s">    single line.</span>
+<span class="pl-s"><span class="pl-pds">'''</span></span>
+
+<span class="pl-k">assert</span> s<span class="pl-k">.</span>joinLines() <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">'</span>This is a multi-line String that I want to join into one single line.<span class="pl-pds">'</span></span></pre></div>
+
+<h3>
+<a id="trimandcollapsewhitespace" class="anchor" href="#trimandcollapsewhitespace" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>.trimAndCollapseWhitespace()</code>
+</h3>
+
+<div class="highlight highlight-source-groovy"><pre><span class="pl-k">static</span> <span class="pl-k">String</span> <span class="pl-en">trimAndCollapseWhitespace</span>(<span class="pl-k">String</span> <span class="pl-v">self</span>)
+<span class="pl-k">static</span> <span class="pl-k">String</span> <span class="pl-en">trimAndCollapseWhitespace</span>(<span class="pl-k">GString</span> <span class="pl-v">self</span>)</pre></div>
+
+<p>Provides a method to trim leading and trailing whitespace and collapse multiple whitespace characters to one single space.</p>
+
+<h4>
+<a id="example-1" class="anchor" href="#example-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example:</h4>
+
+<div class="highlight highlight-source-groovy"><pre><span class="pl-k">GString</span> query <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">"""</span></span>
+<span class="pl-s">    SELECT *</span>
+<span class="pl-s">    FROM   cities</span>
+<span class="pl-s">    WHERE  country = <span class="pl-s1"><span class="pl-pse">${</span>country<span class="pl-pse">}</span></span></span>
+<span class="pl-s">    AND    region  = <span class="pl-s1"><span class="pl-pse">${</span>region<span class="pl-pse">}</span></span></span>
+<span class="pl-s"><span class="pl-pds">"""</span></span>
+
+<span class="pl-k">assert</span> query<span class="pl-k">.</span>trimAndCollapseWhitespace() <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>SELECT * FROM cities WHERE country = <span class="pl-s1"><span class="pl-pse">${</span>country<span class="pl-pse">}</span></span> AND region = <span class="pl-s1"><span class="pl-pse">${</span>region<span class="pl-pse">}</span></span><span class="pl-pds">"</span></span></pre></div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Groovy-string-extensions maintained by <a href="https://github.com/rvenutolo">rvenutolo</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
