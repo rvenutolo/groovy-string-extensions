@@ -2,9 +2,15 @@ language: groovy
 
 jdk:
   - oraclejdk8
-  - oraclejdk7
-  - openjdk7
+
+env:
+  matrix:
+    secure: fWQ2Qdi9PvjTNX5x2t4mMgeYly0w4HUi++fsecBGJiUcQx+E+j1jLbIevilV10zIpqtZ2tKdQuBAfR2Eard69/D2vc0ZV1HisWgGCbdHKE0fustiikEcyzYV4ORdWKfLaeIoKyuAetRwCPsZokdNYnbNjSjfzVePhgk7efzA1+NNyXoQV/4UjT/ojIsndriXYyveS4mda7iNwYxh57+m0Zv3ZqopKcWqmAnoc2q0XTw/Emf7/bpA33pXXhSV2l7VKvkjqMYvkLxre1DAqvlFO2NRPEkw4aepL8TBcVUL26fqHNYu+cCXtv7eoNSSaGAenEzyYraPwzGj7Sic8NCC6fnrbEoxIzgIAd2RvX37AXMxzEuYMjxj+tO58NJN//AQ0cYKS4OtqwGAX0z2hoXs01XgPTvWbu18Eq8T+vBE95oukBSk3NM+7+ITC1PzvyyhmJeMNIpzSBaaVfjMqjC2WCXRCjRzQ55O/s3PyBVG/QQ8nK2nb9r3oM/CMqg+t1uTIE4GcoXR3fc6ATb8OBXnAofjr3eCtmjcBayzVE9urmpshNTz30deGeJSnthsUpQrUBnupRKmOeKh7OdakXrF0bcJb2czXTYKkhABUgVliT6WMM4pAW78UFN9Op2mbfnTl4tIAj4eUt+ASTONgAT/PgsW/Y+danQKRN8bzdUlAS0=
 
 after_success:
+  # upload cobertura report to coveralls
   - mvn clean cobertura:cobertura gplus:addSources coveralls:report
+  # check with sputnik
   - python <(curl -s https://raw.githubusercontent.com/TouK/sputnik-ci/master/sputnik-ci.py)
+  # if is master branch and not a pull request, deploy site to github
+  - if [[ $TRAVIS_BRANCH == "master" && $TRAVIS_PULL_REQUEST == "false"]]; then mvn -B -Dgithub.global.oauth2Token=$GITHUB_AUTH_TOKEN com.github.github:site-maven-plugin:site; fi

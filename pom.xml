@@ -395,8 +395,7 @@
                 <artifactId>site-maven-plugin</artifactId>
                 <version>0.12</version>
                 <configuration>
-                    <!-- NOTE: token must have public_repo and user:email scopes -->
-                    <server>github</server>
+                    <!-- NOTE: oauth2token must have public_repo and user:email scopes -->
                     <message>creating maven site for ${project.version}</message>
                     <path>${github.site.path}</path>
                     <merge>true</merge>
