@@ -8,7 +8,8 @@ env:
     secure: fWQ2Qdi9PvjTNX5x2t4mMgeYly0w4HUi++fsecBGJiUcQx+E+j1jLbIevilV10zIpqtZ2tKdQuBAfR2Eard69/D2vc0ZV1HisWgGCbdHKE0fustiikEcyzYV4ORdWKfLaeIoKyuAetRwCPsZokdNYnbNjSjfzVePhgk7efzA1+NNyXoQV/4UjT/ojIsndriXYyveS4mda7iNwYxh57+m0Zv3ZqopKcWqmAnoc2q0XTw/Emf7/bpA33pXXhSV2l7VKvkjqMYvkLxre1DAqvlFO2NRPEkw4aepL8TBcVUL26fqHNYu+cCXtv7eoNSSaGAenEzyYraPwzGj7Sic8NCC6fnrbEoxIzgIAd2RvX37AXMxzEuYMjxj+tO58NJN//AQ0cYKS4OtqwGAX0z2hoXs01XgPTvWbu18Eq8T+vBE95oukBSk3NM+7+ITC1PzvyyhmJeMNIpzSBaaVfjMqjC2WCXRCjRzQ55O/s3PyBVG/QQ8nK2nb9r3oM/CMqg+t1uTIE4GcoXR3fc6ATb8OBXnAofjr3eCtmjcBayzVE9urmpshNTz30deGeJSnthsUpQrUBnupRKmOeKh7OdakXrF0bcJb2czXTYKkhABUgVliT6WMM4pAW78UFN9Op2mbfnTl4tIAj4eUt+ASTONgAT/PgsW/Y+danQKRN8bzdUlAS0=
 
 before_install:
-- export TZ=America/New_York
+  # set timezone so generated docs have time local to me
+  - export TZ=America/New_York
 
 after_success:
   # check with sputnik
