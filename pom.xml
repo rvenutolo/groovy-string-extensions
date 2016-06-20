@@ -362,10 +362,14 @@
                 <artifactId>license-maven-plugin</artifactId>
                 <version>2.11</version>
                 <configuration>
-                    <header>com/mycila/maven/plugin/license/templates/APACHE-2.txt</header>
+                    <header>src/license/license-header-template.txt</header>
+                    <mapping>
+                        <!-- use /* instead of /** -->
+                        <java>SLASHSTAR_STYLE</java>
+                        <groovy>SLASHSTAR_STYLE</groovy>
+                    </mapping>
                     <properties>
                         <owner>Rick Venutolo</owner>
-                        <email>license@venutolo.org</email>
                     </properties>
                     <includes>
                         <include>src/main/groovy/**</include>
