@@ -336,7 +336,7 @@
                             <goal>copy</goal>
                         </goals>
                         <configuration>
-                            <sourceFile>README.md</sourceFile>
+                            <sourceFile>${project.basedir}/README.md</sourceFile>
                             <destinationFile>${project.basedir}/src/site/markdown/index.md</destinationFile>
                         </configuration>
                     </execution>
