@@ -63,6 +63,7 @@
         <maven.compiler.target>1.6</maven.compiler.target>
         <groovy.version>2.4.7</groovy.version>
         <spock.version>1.0-groovy-2.4</spock.version>
+        <!-- path for non-release version of maven site -->
         <github.site.path>snapshot</github.site.path>
     </properties>
 
@@ -314,6 +315,8 @@
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.5.1</version>
                 <configuration>
+                    <!-- disable site deployment as github site-maven-plugin will handle it.
+                    see: https://github.github.com/maven-plugins/site-plugin/phase.html -->
                     <skipDeploy>true</skipDeploy>
                 </configuration>
             </plugin>
@@ -364,7 +367,7 @@
                 <configuration>
                     <header>${project.basedir}/src/license/license-header-template.txt</header>
                     <mapping>
-                        <!-- use /* instead of /** -->
+                        <!-- use /* instead of /**, which is the default for some reason -->
                         <java>SLASHSTAR_STYLE</java>
                         <groovy>SLASHSTAR_STYLE</groovy>
                     </mapping>
@@ -372,8 +375,10 @@
                         <owner>Rick Venutolo</owner>
                     </properties>
                     <includes>
-                        <!-- can't use ${project.basedir}/src/main/groovy/**
-                         or ${project.build.sourceDirectory}/** for some reason -->
+                        <!-- when the plugin does matching, it uses the relative path of the file.
+                        ex: pom.xml is 'pom.xml' and not '${project.basedir}/pom.xml'.
+                        so one cannot use ${project.basedir}/src/main/groovy/**
+                        or ${project.build.sourceDirectory}/**-->
                         <include>src/main/groovy/**</include>
                         <include>src/test/groovy/**</include>
                     </includes>
@@ -404,6 +409,7 @@
                     <!-- NOTE: oauth2token must have public_repo and user:email scopes -->
                     <message>creating maven site for ${project.version}</message>
                     <path>${github.site.path}</path>
+                    <!-- don't overwrite non maven site stuff in repo -->
                     <merge>true</merge>
                 </configuration>
                 <executions>
