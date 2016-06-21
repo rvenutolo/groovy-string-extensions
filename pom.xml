@@ -195,9 +195,7 @@
                         <goals>
                             <goal>addSources</goal>
                             <goal>addTestSources</goal>
-                            <goal>generateStubs</goal>
                             <goal>compile</goal>
-                            <goal>testGenerateStubs</goal>
                             <goal>testCompile</goal>
                         </goals>
                     </execution>
@@ -205,6 +203,8 @@
                         <id>package-groovydoc</id>
                         <phase>prepare-package</phase>
                         <goals>
+                            <goal>generateStubs</goal>
+                            <goal>testGenerateStubs</goal>
                             <goal>groovydoc</goal>
                             <goal>testGroovydoc</goal>
                         </goals>
@@ -213,6 +213,8 @@
                         <id>site-groovydoc</id>
                         <phase>pre-site</phase>
                         <goals>
+                            <goal>generateStubs</goal>
+                            <goal>testGenerateStubs</goal>
                             <goal>groovydoc</goal>
                             <goal>testGroovydoc</goal>
                         </goals>
