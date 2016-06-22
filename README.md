@@ -1,6 +1,6 @@
 # groovy-string-extensions
 [![Build Status](https://travis-ci.org/rvenutolo/groovy-string-extensions.svg?branch=master)](https://travis-ci.org/rvenutolo/groovy-string-extensions)
-[![Coverage Status](https://coveralls.io/repos/github/rvenutolo/groovy-string-extensions/badge.svg?branch=master)](https://coveralls.io/github/rvenutolo/groovy-string-extensions?branch=master)
+[![Coverage Status](https://codecov.io/gh/rvenutolo/groovy-string-extensions/branch/master/graph/badge.svg)](https://codecov.io/gh/rvenutolo/groovy-string-extensions)
 [![Dependency Status](https://www.versioneye.com/user/projects/57670911276f0f00498e3bca/badge.svg?style=flat)](https://www.versioneye.com/user/projects/57670911276f0f00498e3bca)
 
 [![Maven Site](https://img.shields.io/badge/Maven%20Site-0.1.0--SNAPSHOT-brightgreen.svg)](https://rvenutolo.github.io/groovy-string-extensions/snapshot/)
