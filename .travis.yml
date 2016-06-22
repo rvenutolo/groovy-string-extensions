@@ -11,7 +11,7 @@ before_install:
   # set timezone so generated docs have time local to me
   - export TZ=America/New_York
   # disable all the download info logging to make log easier to read through
-  - echo 'org.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn' >> /usr/local/maven/conf/logging/simplelogger.properties
+  - echo "MAVEN_OPTS='$MAVEN_OPTS -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'" > ~/.mavenrc
 
 after_success:
   # check with sputnik
