@@ -11,7 +11,7 @@ before_install:
   # set timezone so generated docs have time local to me
   - export TZ=America/New_York
   # disable all the download info logging to make log easier to read through
-  - echo "MAVEN_OPTS='$MAVEN_OPTS -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'" > ~/.mavenrc
+  - echo "MAVEN_OPTS='-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'" > ~/.mavenrc
 
 after_success:
   # check with sputnik
@@ -19,6 +19,5 @@ after_success:
   # upload coverage report to codecov
   - mvn -B cobertura:cobertura
   - bash <(curl -s https://codecov.io/bash)
-  ## TODO re-enable this after fixing coverage report
   # if is master branch and not a pull request, deploy site to github
-  #- if [[ $TRAVIS_BRANCH == "master" && $TRAVIS_PULL_REQUEST == "false" ]]; then mvn -B -Dgithub.global.oauth2Token=$GITHUB_AUTH_TOKEN site-deploy; fi
+  - if [[ $TRAVIS_BRANCH == "master" && $TRAVIS_PULL_REQUEST == "false" ]]; then mvn -B -Dgithub.global.oauth2Token=$GITHUB_AUTH_TOKEN site-deploy; fi
