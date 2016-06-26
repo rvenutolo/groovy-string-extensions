@@ -15,6 +15,7 @@
  */
 package org.venutolo.groovy.extension
 
+import groovy.transform.CompileStatic
 import org.codehaus.groovy.runtime.GStringImpl
 
 import java.util.regex.Pattern
@@ -29,6 +30,7 @@ import java.util.regex.Pattern
  * and should not be referenced directly. Future versions may move methods in this class to another
  * internal class, but aim to keep the methods available from within Groovy.
  */
+@CompileStatic
 final class JoinLinesExtension {
 
     private JoinLinesExtension() {
