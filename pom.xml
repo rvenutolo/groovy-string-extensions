@@ -301,87 +301,11 @@
                         </goals>
                         <configuration>
                             <failOnWarning>true</failOnWarning>
-                            <ignoreNonCompile>false</ignoreNonCompile>
                             <failBuild>true</failBuild>
+                            <ignoreNonCompile>false</ignoreNonCompile>
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>versions-maven-plugin</artifactId>
-                <version>2.2</version>
-                <executions>
-                    <execution>
-                        <id>display-updates</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>display-dependency-updates</goal>
-                            <goal>display-plugin-updates</goal>
-                            <goal>display-property-updates</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.19.1</version>
-                <configuration>
-                    <includes>
-                        <include>**/*Spec.class</include>
-                    </includes>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>3.5.1</version>
-                <configuration>
-                    <!-- disable site deployment as github site-maven-plugin will handle it.
-                    see: https://github.github.com/maven-plugins/site-plugin/phase.html -->
-                    <skipDeploy>true</skipDeploy>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>2.9</version>
-            </plugin>
-            <plugin>
-                <groupId>com.coderplus.maven.plugins</groupId>
-                <artifactId>copy-rename-maven-plugin</artifactId>
-                <version>1.0.1</version>
-                <executions>
-                    <execution>
-                        <!-- This copies the README.md file to the site dir and
-                        renames it to index.md for site generation. -->
-                        <id>copy-readme-to-index</id>
-                        <phase>pre-site</phase>
-                        <goals>
-                            <goal>copy</goal>
-                        </goals>
-                        <configuration>
-                            <sourceFile>${project.basedir}/README.md</sourceFile>
-                            <destinationFile>${project.basedir}/src/site/markdown/index.md</destinationFile>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>cobertura-maven-plugin</artifactId>
-                <version>2.7</version>
-                <configuration>
-                    <format>xml</format>
-                    <maxmem>256m</maxmem>
-                    <check/>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.eluder.coveralls</groupId>
-                <artifactId>coveralls-maven-plugin</artifactId>
-                <version>4.2.0</version>
             </plugin>
             <plugin>
                 <groupId>com.mycila</groupId>
@@ -417,13 +341,80 @@
                 </executions>
             </plugin>
             <plugin>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.5.3</version>
+                <!-- just generates report at end of validate phase I like to see -->
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <version>2.2</version>
+                <executions>
+                    <execution>
+                        <id>display-updates</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>display-dependency-updates</goal>
+                            <goal>display-plugin-updates</goal>
+                            <goal>display-property-updates</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
                 <configuration>
-                    <!-- TODO check this -->
-                    <useReleaseProfile>true</useReleaseProfile>
-                    <!-- TODO add distributionManagement>site element and remove 'goals' -->
-                    <goals>deploy site-deploy</goals>
+                    <includes>
+                        <include>**/*Spec.class</include>
+                    </includes>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <format>xml</format>
+                    <maxmem>256m</maxmem>
+                    <check/>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.eluder.coveralls</groupId>
+                <artifactId>coveralls-maven-plugin</artifactId>
+                <version>4.2.0</version>
+            </plugin>
+            <plugin>
+                <groupId>com.coderplus.maven.plugins</groupId>
+                <artifactId>copy-rename-maven-plugin</artifactId>
+                <version>1.0.1</version>
+                <executions>
+                    <execution>
+                        <!-- This copies the README.md file to the site dir and
+                        renames it to index.md for site generation. -->
+                        <id>copy-readme-to-index</id>
+                        <phase>pre-site</phase>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
+                        <configuration>
+                            <sourceFile>${project.basedir}/README.md</sourceFile>
+                            <destinationFile>${project.basedir}/src/site/markdown/index.md</destinationFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>2.9</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <!-- disable site deployment as github site-maven-plugin will handle it.
+                    see: https://github.github.com/maven-plugins/site-plugin/phase.html -->
+                    <skipDeploy>true</skipDeploy>
                 </configuration>
             </plugin>
             <plugin>
@@ -446,6 +437,16 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <!-- TODO check this -->
+                    <useReleaseProfile>true</useReleaseProfile>
+                    <!-- TODO add distributionManagement>site element and remove 'goals' -->
+                    <goals>deploy site-deploy</goals>
+                </configuration>
             </plugin>
         </plugins>
     </build>
