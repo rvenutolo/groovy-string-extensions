@@ -15,8 +15,9 @@ withConfig(configuration) {
     source(
         classValidator: {final ClassNode classNode ->
             final boolean isSpecClass = classNode.nameWithoutPackage.endsWith('Spec')
-            final boolean isCompileStaticAnnotated =
-                classNode.annotations*.classNode*.nameWithoutPackage.contains('CompileStatic')
+            final boolean isCompileStaticAnnotated = classNode.annotations.any {
+                it.classNode.nameWithoutPackage == 'CompileStatic'
+            }
             final boolean applyCompileStatic = !isSpecClass && !isCompileStaticAnnotated
             if (applyCompileStatic) {
                 println("Applying @CompileStatic to $classNode")
