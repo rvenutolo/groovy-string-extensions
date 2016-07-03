@@ -501,6 +501,8 @@
                 <artifactId>codenarc-maven-plugin</artifactId>
                 <version>0.22-1</version>
                 <configuration>
+                    <codeNarcVersion>0.25.2</codeNarcVersion>
+                    <rulesetfiles>file:${project.basedir}/src/codenarc/codenarc.groovy</rulesetfiles>
                     <groovyVersion>${groovy.version}</groovyVersion>
                     <maxPriority1Violations>0</maxPriority1Violations>
                     <maxPriority2Violations>0</maxPriority2Violations>
