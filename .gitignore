@@ -96,4 +96,4 @@ Session.vim
 
 ### Project specific
 src/site/markdown/index.md
-!.mvn/wrapper/**
+!.mvn/**/*
