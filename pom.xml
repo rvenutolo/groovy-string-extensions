@@ -99,7 +99,7 @@
         <resources>
             <resource>
                 <!-- This filters the ExtensionModule resource file to use
-                artifactId and version values in module name and version -->
+                artifactId and version values in module name and version. -->
                 <directory>${project.basedir}/src/main/resources</directory>
                 <filtering>true</filtering>
             </resource>
@@ -187,7 +187,7 @@
                 <artifactId>gmavenplus-plugin</artifactId>
                 <version>1.5</version>
                 <configuration>
-                    <!-- add @CompileStatic to non-Spec clasess -->
+                    <!-- add @CompileStatic to non-Spec classes -->
                     <configScript>${project.basedir}/src/conf/config.groovy</configScript>
                     <!-- groovydoc titles/footer/header -->
                     <windowTitle>${project.groupId}:${project.artifactId}:${project.version}</windowTitle>
@@ -336,7 +336,7 @@
                 <configuration>
                     <header>${project.basedir}/src/license/license-header-template.txt</header>
                     <mapping>
-                        <!-- use /* instead of /**, which is the default for some reason -->
+                        <!-- Use /* instead of /**, which is the default for some reason. -->
                         <java>SLASHSTAR_STYLE</java>
                         <groovy>SLASHSTAR_STYLE</groovy>
                     </mapping>
@@ -344,10 +344,10 @@
                         <owner>Rick Venutolo</owner>
                     </properties>
                     <includes>
-                        <!-- when the plugin does matching, it uses the relative path of the file.
-                        ex: pom.xml is 'pom.xml' and not '${project.basedir}/pom.xml'.
-                        so one cannot use ${project.basedir}/src/main/groovy/**
-                        or ${project.build.sourceDirectory}/**-->
+                        <!-- When the plugin does matching, it uses the relative path of the file,
+                        e.g. pom.xml is 'pom.xml' and not '${project.basedir}/pom.xml'.
+                        So one cannot use '${project.basedir}/src/main/groovy/**'
+                        or '${project.build.sourceDirectory}/**'-->
                         <include>src/main/groovy/**</include>
                         <include>src/test/groovy/**</include>
                     </includes>
@@ -445,7 +445,7 @@
                 <artifactId>maven-site-plugin</artifactId>
                 <version>3.5.1</version>
                 <configuration>
-                    <!-- disable site deployment as github site-maven-plugin will handle it.
+                    <!-- disable site deployment as github site-maven-plugin will handle it
                     see: https://github.github.com/maven-plugins/site-plugin/phase.html -->
                     <skipDeploy>true</skipDeploy>
                 </configuration>
@@ -575,8 +575,8 @@
                         </executions>
                     </plugin>
                     <plugin>
-                        <!-- using this instead of groovydoc-maven-plugin because
-                        I prefer the groovydoc output by gplus (mostly links config) -->
+                        <!-- Using this instead of groovydoc-maven-plugin because
+                        I prefer the groovydoc output by gplus (mostly links config). -->
                         <artifactId>maven-assembly-plugin</artifactId>
                         <version>2.6</version>
                         <executions>

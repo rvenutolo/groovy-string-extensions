@@ -18,18 +18,21 @@ ruleset {
     ruleset('rulesets/logging.xml')
     ruleset('rulesets/naming.xml') {
         VariableName {
-            // for some reason, finalRegex (used to check final local variables)
-            // requires uppercase letters, so set to non-final regex
+            // For some reason finalRegex, which is used to check final local
+            // variable names, requires uppercase letters, so set it to the
+            // non-final regex.
             finalRegex = regex
         }
     }
     ruleset('rulesets/security.xml')
     ruleset('rulesets/serialization.xml')
     ruleset('rulesets/size.xml') {
-        // TODO add GMetrics and add these rules?
-        AbcMetric(enabled: false) // Requires the GMetrics jar
-        CrapMetric(enabled: false) // Requires the GMetrics jar and a Cobertura coverage file
-        CyclomaticComplexity(enabled: false) // Requires the GMetrics jar
+        // Requires the GMetrics jar
+        AbcMetric(enabled: false)
+        // Requires the GMetrics jar and a Cobertura coverage file
+        CrapMetric(enabled: false)
+        // Requires the GMetrics jar
+        CyclomaticComplexity(enabled: false)
     }
     ruleset('rulesets/unnecessary.xml')
     ruleset('rulesets/unused.xml')
