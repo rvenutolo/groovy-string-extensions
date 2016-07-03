@@ -156,6 +156,19 @@
                     <artifactId>maven-release-plugin</artifactId>
                     <version>2.5.3</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>codenarc-maven-plugin</artifactId>
+                    <version>0.22-1</version>
+                    <configuration>
+                        <codeNarcVersion>0.25.2</codeNarcVersion>
+                        <rulesetfiles>file:${project.basedir}/src/codenarc/codenarc.groovy</rulesetfiles>
+                        <groovyVersion>${groovy.version}</groovyVersion>
+                        <maxPriority1Violations>0</maxPriority1Violations>
+                        <maxPriority2Violations>0</maxPriority2Violations>
+                        <maxPriority3Violations>0</maxPriority3Violations>
+                    </configuration>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
@@ -383,6 +396,19 @@
                 <version>4.2.0</version>
             </plugin>
             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>codenarc-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>codenarc</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>codenarc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>com.coderplus.maven.plugins</groupId>
                 <artifactId>copy-rename-maven-plugin</artifactId>
                 <version>1.0.1</version>
@@ -499,15 +525,6 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>codenarc-maven-plugin</artifactId>
-                <version>0.22-1</version>
-                <configuration>
-                    <codeNarcVersion>0.25.2</codeNarcVersion>
-                    <rulesetfiles>file:${project.basedir}/src/codenarc/codenarc.groovy</rulesetfiles>
-                    <groovyVersion>${groovy.version}</groovyVersion>
-                    <maxPriority1Violations>0</maxPriority1Violations>
-                    <maxPriority2Violations>0</maxPriority2Violations>
-                    <maxPriority3Violations>0</maxPriority3Violations>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
