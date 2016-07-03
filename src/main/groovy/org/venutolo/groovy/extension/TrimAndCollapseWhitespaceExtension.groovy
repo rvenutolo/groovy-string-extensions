@@ -68,7 +68,7 @@ final class TrimAndCollapseWhitespaceExtension {
         final String[] originalStrings = self.strings
         final String[] newStrings = new String[originalStrings.length]
         final int indexToTrimEnd = originalStrings.length - 1
-        originalStrings.eachWithIndex {final String originalString, final int i ->
+        originalStrings.eachWithIndex { final String originalString, final int i ->
             String newString = MULTIPLE_WHITESPACE.matcher(originalString).replaceAll(' ')
             if (i == 0) {
                 newString = LEADING_WHITESPACE.matcher(newString).replaceFirst('')
