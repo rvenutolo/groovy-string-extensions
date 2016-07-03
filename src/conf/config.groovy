@@ -14,7 +14,8 @@ import org.codehaus.groovy.ast.ClassNode
 withConfig(configuration) {
     source(
         classValidator: {final ClassNode classNode ->
-            final boolean isSpecClass = classNode.nameWithoutPackage.endsWith('Spec')
+            final boolean isSpecClass = classNode.nameWithoutPackage.endsWith('Spec') ||
+                                        classNode.nameWithoutPackage.contains('Spec$')
             final boolean isCompileStaticAnnotated = classNode.annotations.any {
                 it.classNode.nameWithoutPackage == 'CompileStatic'
             }
