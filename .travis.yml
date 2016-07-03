@@ -13,11 +13,16 @@ before_install:
   # disable all the download info logging to make log easier to read through
   - echo "MAVEN_OPTS='-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'" > ~/.mavenrc
 
+install:
+  - ./mvnw -B -V install -DskipTests=true -Dmaven.javadoc.skip=true
+
+script:
+  - ./mvnw -B -V test cobertura:cobertura
+
 after_success:
   # check with sputnik
   - python <(curl -s https://raw.githubusercontent.com/TouK/sputnik-ci/master/sputnik-ci.py)
   # upload coverage report to codecov
-  - mvn -B cobertura:cobertura
   - bash <(curl -s https://codecov.io/bash)
   # if is master branch and not a pull request, deploy site to github
-  - if [[ $TRAVIS_BRANCH == "master" && $TRAVIS_PULL_REQUEST == "false" ]]; then mvn -B -Dgithub.global.oauth2Token=$GITHUB_AUTH_TOKEN site-deploy; fi
+  - if [[ $TRAVIS_BRANCH == "master" && $TRAVIS_PULL_REQUEST == "false" ]]; then ./mvnw -B -V -Dgithub.global.oauth2Token=$GITHUB_AUTH_TOKEN site-deploy; fi
