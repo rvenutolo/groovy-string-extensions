@@ -36,6 +36,10 @@ final class JoinLinesExtension {
     private JoinLinesExtension() {
     }
 
+    private static final String SINGLE_SPACE = ' '
+
+    private static final String EMPTY_STRING = ''
+
     private static final Pattern LEADING_WHITESPACE = ~/^\s+/
 
     private static final Pattern TRAILING_WHITESPACE = ~/\s+$/
@@ -52,7 +56,7 @@ final class JoinLinesExtension {
      * @return a trimmed and single-line {@code String}
      */
     static String joinLines(final String self) {
-        WHITESPACE_NEWLINE_WHITESPACE.matcher(self.trim()).replaceAll(' ')
+        WHITESPACE_NEWLINE_WHITESPACE.matcher(self.trim()).replaceAll(SINGLE_SPACE)
     }
 
     /**
@@ -70,12 +74,13 @@ final class JoinLinesExtension {
         final String[] newStrings = new String[originalStrings.length]
         final int indexToTrimEnd = originalStrings.length - 1
         originalStrings.eachWithIndex { final String originalString, final int i ->
-            String newString = WHITESPACE_NEWLINE_WHITESPACE.matcher(originalString).replaceAll(' ')
+            String newString =
+                WHITESPACE_NEWLINE_WHITESPACE.matcher(originalString).replaceAll(SINGLE_SPACE)
             if (i == 0) {
-                newString = LEADING_WHITESPACE.matcher(newString).replaceFirst('')
+                newString = LEADING_WHITESPACE.matcher(newString).replaceFirst(EMPTY_STRING)
             }
             if (i == indexToTrimEnd) {
-                newString = TRAILING_WHITESPACE.matcher(newString).replaceFirst('')
+                newString = TRAILING_WHITESPACE.matcher(newString).replaceFirst(EMPTY_STRING)
             }
             newStrings[i] = newString
         }
