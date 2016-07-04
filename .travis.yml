@@ -14,10 +14,10 @@ before_install:
   - echo "MAVEN_OPTS='-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'" > ~/.mavenrc
 
 install:
-  - ./mvnw -B -V install -DskipTests=true
+  - ./mvnw -B -V -e install -DskipTests=true
 
 script:
-  - ./mvnw -B -V cobertura:cobertura -Dversions.skip=true
+  - ./mvnw -B -V -e cobertura:cobertura -Dversions.skip=true
 
 after_success:
   # check with sputnik
@@ -25,4 +25,4 @@ after_success:
   # upload coverage report to codecov
   - bash <(curl -s https://codecov.io/bash)
   # if is master branch and not a pull request, deploy site to github
-  #- if [[ $TRAVIS_BRANCH == "master" && $TRAVIS_PULL_REQUEST == "false" ]]; then ./mvnw -B -V -Dgithub.global.oauth2Token=$GITHUB_AUTH_TOKEN site-deploy; fi
+  #- if [[ $TRAVIS_BRANCH == "master" && $TRAVIS_PULL_REQUEST == "false" ]]; then ./mvnw -B -V -e -Dgithub.global.oauth2Token=$GITHUB_AUTH_TOKEN site-deploy; fi
