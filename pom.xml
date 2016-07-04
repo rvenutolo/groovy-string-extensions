@@ -185,7 +185,7 @@
                 <version>1.5</version>
                 <configuration>
                     <!-- add @CompileStatic to non-Spec classes -->
-                    <configScript>${project.basedir}/src/conf/config.groovy</configScript>
+                    <configScript>${project.basedir}/src/compiler/config.groovy</configScript>
                     <!-- groovydoc titles/footer/header -->
                     <windowTitle>${project.groupId}:${project.artifactId}:${project.version}</windowTitle>
                     <docTitle>${project.groupId}:${project.artifactId}:${project.version}</docTitle>
