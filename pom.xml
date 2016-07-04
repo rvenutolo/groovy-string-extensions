@@ -174,9 +174,6 @@
                         <codeNarcVersion>0.25.2</codeNarcVersion>
                         <rulesetfiles>file:${project.basedir}/src/codenarc/codenarc.groovy</rulesetfiles>
                         <groovyVersion>${groovy.version}</groovyVersion>
-                        <maxPriority1Violations>0</maxPriority1Violations>
-                        <maxPriority2Violations>0</maxPriority2Violations>
-                        <maxPriority3Violations>0</maxPriority3Violations>
                     </configuration>
                 </plugin>
             </plugins>
@@ -289,60 +286,6 @@
                 </executions>
             </plugin>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>animal-sniffer-maven-plugin</artifactId>
-                <version>1.15</version>
-                <configuration>
-                    <signature>
-                        <groupId>org.codehaus.mojo.signature</groupId>
-                        <artifactId>java16</artifactId>
-                        <version>1.1</version>
-                    </signature>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>check-java-api</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>com.mycila</groupId>
-                <artifactId>license-maven-plugin</artifactId>
-                <version>2.11</version>
-                <configuration>
-                    <header>${project.basedir}/src/license/license-header-template.txt</header>
-                    <mapping>
-                        <!-- Use /* instead of /**, which is the default for some reason. -->
-                        <java>SLASHSTAR_STYLE</java>
-                        <groovy>SLASHSTAR_STYLE</groovy>
-                    </mapping>
-                    <properties>
-                        <owner>Rick Venutolo</owner>
-                    </properties>
-                    <includes>
-                        <!-- When the plugin does matching, it uses the relative path of the file,
-                        e.g. pom.xml is 'pom.xml' and not '${project.basedir}/pom.xml'.
-                        So one cannot use '${project.basedir}/src/main/groovy/**'
-                        or '${project.build.sourceDirectory}/**'-->
-                        <include>src/main/groovy/**</include>
-                        <include>src/test/groovy/**</include>
-                    </includes>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>check-licenses</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <!-- just generates report at end of validate phase I like to see -->
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
@@ -384,7 +327,66 @@
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
+                <artifactId>animal-sniffer-maven-plugin</artifactId>
+                <version>1.15</version>
+                <configuration>
+                    <signature>
+                        <groupId>org.codehaus.mojo.signature</groupId>
+                        <artifactId>java16</artifactId>
+                        <version>1.1</version>
+                    </signature>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>check-java-api</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.mycila</groupId>
+                <artifactId>license-maven-plugin</artifactId>
+                <version>2.11</version>
+                <configuration>
+                    <header>${project.basedir}/src/license/license-header-template.txt</header>
+                    <mapping>
+                        <!-- Use /* instead of /**, which is the default for some reason. -->
+                        <java>SLASHSTAR_STYLE</java>
+                        <groovy>SLASHSTAR_STYLE</groovy>
+                    </mapping>
+                    <properties>
+                        <owner>Rick Venutolo</owner>
+                    </properties>
+                    <includes>
+                        <!-- When the plugin does matching, it uses the relative path of the file,
+                        e.g. pom.xml is 'pom.xml' and not '${project.basedir}/pom.xml'.
+                        So one cannot use '${project.basedir}/src/main/groovy/**'
+                        or '${project.build.sourceDirectory}/**'-->
+                        <include>src/main/groovy/**</include>
+                        <include>src/test/groovy/**</include>
+                    </includes>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>check-licenses</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
                 <artifactId>codenarc-maven-plugin</artifactId>
+                <configuration>
+                    <maxPriority1Violations>0</maxPriority1Violations>
+                    <maxPriority2Violations>0</maxPriority2Violations>
+                    <maxPriority3Violations>0</maxPriority3Violations>
+                </configuration>
                 <executions>
                     <execution>
                         <id>codenarc</id>
