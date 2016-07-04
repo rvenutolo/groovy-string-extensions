@@ -14,7 +14,7 @@ before_install:
   - echo "MAVEN_OPTS='-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'" > ~/.mavenrc
 
 install:
-  - ./mvnw -B -V install -DskipTests=true -Dmaven.javadoc.skip=true -Dversions.skip=true
+  - ./mvnw -B -V install -DskipTests=true
 
 script:
   - ./mvnw -B -V cobertura:cobertura -Dversions.skip=true
