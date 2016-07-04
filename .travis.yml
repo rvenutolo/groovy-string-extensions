@@ -17,7 +17,7 @@ install:
   - ./mvnw -B -V -e install -DskipTests=true
 
 script:
-  - ./mvnw -B -V -e cobertura:cobertura -Dversions.skip=true
+  - ./mvnw -B -V -e cobertura:cobertura
 
 after_success:
   # check with sputnik
