@@ -25,7 +25,6 @@ after_success:
   # check with sputnik
   - python <(curl -s https://raw.githubusercontent.com/TouK/sputnik-ci/master/sputnik-ci.py)
   # upload coverage report to codecov
-  - ./mvnw -B -V -e cobertura:cobertura
-  - bash <(curl -s https://codecov.io/bash)
+  - ./mvnw -B -V -e cobertura:cobertura && bash <(curl -s https://codecov.io/bash)
   # if is master branch and not a pull request, deploy site to github
   #- if [[ $TRAVIS_BRANCH == "master" && $TRAVIS_PULL_REQUEST == "false" ]]; then ./mvnw -B -V -e -Dgithub.global.oauth2Token=$GITHUB_AUTH_TOKEN site-deploy; fi
