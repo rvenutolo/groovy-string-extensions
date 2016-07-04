@@ -417,7 +417,7 @@
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>check</id>
+                        <id>check-dependencies</id>
                         <phase>verify</phase>
                         <goals>
                             <goal>analyze-only</goal>
