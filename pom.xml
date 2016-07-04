@@ -52,8 +52,8 @@
     </developers>
 
     <prerequisites>
-        <!-- codenarc plugin 0.22-1+ requires 3.0.1+ -->
-        <maven>3.0.1</maven>
+        <!-- buildplan-maven-plugin requires 3.0.4+ -->
+        <maven>3.0.4</maven>
     </prerequisites>
 
     <properties>
@@ -247,6 +247,21 @@
                 </executions>
             </plugin>
             <plugin>
+                <!-- just generates report at start of validate phase I like to see -->
+                <groupId>fr.jcgay.maven.plugins</groupId>
+                <artifactId>buildplan-maven-plugin</artifactId>
+                <version>1.2</version>
+                <executions>
+                    <execution>
+                        <id>display-buildplan</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>list-phase</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>1.4.1</version>
@@ -260,8 +275,8 @@
                 <configuration>
                     <rules>
                         <requireMavenVersion>
-                            <!-- codenarc plugin 0.22-1+ requires 3.0.1+ -->
-                            <version>[3.0.1,)</version>
+                            <!-- buildplan-maven-plugin requires 3.0.4+ -->
+                            <version>[3.0.4,)</version>
                         </requireMavenVersion>
                         <requireJavaVersion>
                             <!-- groovy 2.4.0+ requires 1.6+ -->
