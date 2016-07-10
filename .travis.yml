@@ -18,7 +18,9 @@ before_script:
   # disable all the download info logging to make log easier to read through
   - echo "MAVEN_OPTS='-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'" > ~/.mavenrc
   # alias mvn to run maven wrapper with desired flags
-  alias mvn='./mnvw -B -e'
+  - alias mvn='./mnvw -B -e'
+  # display some info I like to see in log
+  - mvn -V buildplan:list-phase versions:display-dependency-updates versions:display-plugin-updates versions:display-property-updates
 
 script:
   - mvn verify
