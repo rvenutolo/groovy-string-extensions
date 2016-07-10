@@ -245,21 +245,6 @@
                 </executions>
             </plugin>
             <plugin>
-                <!-- just generates report at start of validate phase I like to see -->
-                <groupId>fr.jcgay.maven.plugins</groupId>
-                <artifactId>buildplan-maven-plugin</artifactId>
-                <version>1.2</version>
-                <executions>
-                    <execution>
-                        <id>display-buildplan</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>list-phase</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
                 <version>1.4.1</version>
@@ -299,22 +284,6 @@
                 </executions>
             </plugin>
             <plugin>
-                <!-- just generates report at end of validate phase I like to see -->
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>versions-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>display-updates</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>display-dependency-updates</goal>
-                            <goal>display-plugin-updates</goal>
-                            <goal>display-property-updates</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>animal-sniffer-maven-plugin</artifactId>
                 <version>1.15</version>
@@ -343,15 +312,6 @@
                     <includes>
                         <include>**/*Spec.class</include>
                     </includes>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>cobertura-maven-plugin</artifactId>
-                <configuration>
-                    <format>xml</format>
-                    <maxmem>256m</maxmem>
-                    <check/>
                 </configuration>
             </plugin>
             <plugin>
@@ -519,6 +479,20 @@
                     <useReleaseProfile>true</useReleaseProfile>
                     <!-- TODO add distributionManagement>site element and remove 'goals' -->
                     <goals>deploy site-deploy</goals>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>fr.jcgay.maven.plugins</groupId>
+                <artifactId>buildplan-maven-plugin</artifactId>
+                <version>1.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <configuration>
+                    <format>xml</format>
+                    <maxmem>256m</maxmem>
+                    <check/>
                 </configuration>
             </plugin>
         </plugins>
