@@ -13,7 +13,7 @@ env:
 install: true
 
 before_script:
-  # set timezone so generated docs have time local to me
+  # set timezone so timestamps have time local to me
   - export TZ=America/New_York
   # configure maven logging
   #  - include date time
