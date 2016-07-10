@@ -29,4 +29,4 @@ after_success:
   # generate and upload coverage report
   - ./mvnw -B -e clean -Dcobertura.report.format=xml cobertura:cobertura && bash <(curl -s https://codecov.io/bash)
   # if is master branch and not a pull request, deploy site to github
-  - if [[ $TRAVIS_BRANCH == "master" && $TRAVIS_PULL_REQUEST == "false" ]]; then ./mvnw -B -V -e clean -Dgithub.global.oauth2Token=$GITHUB_AUTH_TOKEN site-deploy; fi
+  - if [[ $TRAVIS_BRANCH == "master" && $TRAVIS_PULL_REQUEST == "false" ]]; then ./mvnw -B -e clean -Dgithub.global.oauth2Token=$GITHUB_AUTH_TOKEN site-deploy; fi
