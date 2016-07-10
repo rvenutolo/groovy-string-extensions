@@ -216,10 +216,8 @@
                     </execution>
                     <execution>
                         <id>site-groovydoc</id>
-                        <phase>pre-site</phase>
+                        <phase>site</phase>
                         <goals>
-                            <goal>generateStubs</goal>
-                            <goal>testGenerateStubs</goal>
                             <goal>groovydoc</goal>
                             <goal>testGroovydoc</goal>
                         </goals>
@@ -522,15 +520,6 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.4</version>
-                <!-- skip javadoc generation as groovydoc is generated elsewhere -->
-                <configuration>
-                    <skip>true</skip>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
                 <version>2.9</version>
                 <reportSets>
@@ -555,12 +544,31 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+                <!-- skip javadoc generation as groovydoc is generated elsewhere -->
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
                 <version>2.19.1</version>
+                <configuration>
+                    <linkXRef>false</linkXRef>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>cobertura</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
