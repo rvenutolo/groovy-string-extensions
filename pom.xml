@@ -223,8 +223,6 @@
                         <id>package-groovydoc</id>
                         <phase>prepare-package</phase>
                         <goals>
-                            <goal>generateStubs</goal>
-                            <goal>testGenerateStubs</goal>
                             <goal>groovydoc</goal>
                             <goal>testGroovydoc</goal>
                         </goals>
