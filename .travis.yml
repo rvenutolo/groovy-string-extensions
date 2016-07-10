@@ -17,18 +17,16 @@ before_script:
   - export TZ=America/New_York
   # disable all the download info logging to make log easier to read through
   - echo "MAVEN_OPTS='-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn'" > ~/.mavenrc
-  # alias mvn to run maven wrapper with desired flags
-  - alias mvn='./mnvw -B -e'
   # display some info I like to see in log
-  - mvn -V buildplan:list-phase versions:display-dependency-updates versions:display-plugin-updates versions:display-property-updates
+  - ./mnvw -B -e -V buildplan:list-phase versions:display-dependency-updates versions:display-plugin-updates versions:display-property-updates
 
 script:
-  - mvn verify
+  - ./mnvw -B -e verify
 
 after_success:
   # check with sputnik
   - python <(curl -s https://raw.githubusercontent.com/TouK/sputnik-ci/master/sputnik-ci.py)
   # upload coverage report to codecov
-  - mvn clean cobertura:cobertura && bash <(curl -s https://codecov.io/bash)
+  - ./mnvw -B -e clean cobertura:cobertura && bash <(curl -s https://codecov.io/bash)
   # if is master branch and not a pull request, deploy site to github
   #- if [[ $TRAVIS_BRANCH == "master" && $TRAVIS_PULL_REQUEST == "false" ]]; then ./mvnw -B -V -e -Dgithub.global.oauth2Token=$GITHUB_AUTH_TOKEN site-deploy; fi
