@@ -444,7 +444,6 @@
                         <configuration>
                             <failOnWarning>true</failOnWarning>
                             <failBuild>true</failBuild>
-                            <ignoreNonCompile>false</ignoreNonCompile>
                         </configuration>
                     </execution>
                 </executions>
