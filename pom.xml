@@ -273,6 +273,9 @@
                         <banCircularDependencies/>
                         <banDuplicateClasses/>
                         <requirePluginVersions/>
+                        <requireReleaseDeps>
+                            <onlyWhenRelease>true</onlyWhenRelease>
+                        </requireReleaseDeps>
                     </rules>
                     <fail>true</fail>
                 </configuration>
