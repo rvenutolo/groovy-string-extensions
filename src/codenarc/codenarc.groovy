@@ -1,5 +1,6 @@
 // http://codenarc.sourceforge.net/codenarc-configuring-rules.html
 ruleset {
+    rule('file:src/codenarc/ClassWithoutCompileStaticRule.groovy')
     ruleset('rulesets/basic.xml')
     ruleset('rulesets/braces.xml')
     ruleset('rulesets/concurrency.xml')
