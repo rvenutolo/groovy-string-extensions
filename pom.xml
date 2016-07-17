@@ -255,6 +255,10 @@
                 </dependencies>
                 <configuration>
                     <rules>
+                        <requirePrerequisite>
+                            <!-- buildplan-maven-plugin requires 3.0.4+ -->
+                            <mavenVersion>[3.0.4,)</mavenVersion>
+                        </requirePrerequisite>
                         <requireMavenVersion>
                             <!-- buildplan-maven-plugin requires 3.0.4+ -->
                             <version>[3.0.4,)</version>
