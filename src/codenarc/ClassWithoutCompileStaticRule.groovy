@@ -10,11 +10,9 @@ import org.codenarc.rule.AbstractAstVisitorRule
  */
 class ClassWithoutCompileStaticRule extends AbstractAstVisitorRule {
 
-    private static final String DESCRIPTION = 'Classes must be annotated with @CompileStatic.'
-
     String name = 'ClassWithoutCompileStatic'
     int priority = 1
-    String description = DESCRIPTION
+    String description = 'Classes must be annotated with @CompileStatic.'
     Class astVisitorClass = EnforceCompileStaticAstVisitor
 
 }
@@ -27,7 +25,7 @@ class EnforceCompileStaticAstVisitor extends AbstractAstVisitor {
             it.classNode.nameWithoutPackage == 'CompileStatic'
         }
         if (!hasCompileStatic) {
-            addViolation(node, ClassWithoutCompileStaticRule.DESCRIPTION)
+            addViolation(node, "${node.name} is not annotated with @CompileStatic")
         }
     }
 
