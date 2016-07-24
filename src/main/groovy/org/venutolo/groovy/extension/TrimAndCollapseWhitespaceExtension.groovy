@@ -30,6 +30,8 @@ import java.util.regex.Pattern
  * NOTE: While this class contains many 'public' static methods, it is intended as an internal class
  * and should not be referenced directly. Future versions may move methods in this class to another
  * internal class, but aim to keep the methods available from within Groovy.
+ *
+ * @since 0.1.0
  */
 @CompileStatic
 final class TrimAndCollapseWhitespaceExtension {
@@ -54,6 +56,8 @@ final class TrimAndCollapseWhitespaceExtension {
      *
      * @param self a {@code String}
      * @return a trimmed and whitespace-collapsed {@code String}
+     *
+     * @since 0.1.0
      */
     static String trimAndCollapseWhitespace(final String self) {
         MULTIPLE_WHITESPACE.matcher(self.trim()).replaceAll(SINGLE_SPACE)
@@ -67,6 +71,8 @@ final class TrimAndCollapseWhitespaceExtension {
      *
      * @param self a {@code GString}
      * @return a trimmed and whitespace-collapsed {@code GString}
+     *
+     * @since 0.1.0
      */
     static GString trimAndCollapseWhitespace(final GString self) {
         final String[] originalStrings = self.strings
