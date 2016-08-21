@@ -95,5 +95,7 @@ Session.vim
 
 
 ### Project specific
+pom.xml.bak
+src/site/site.xml
 src/site/markdown/index.md
 !.mvn/**/*
