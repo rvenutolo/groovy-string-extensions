@@ -11,18 +11,21 @@ install: true
 before_script:
   # set timezone so timestamps have time local to me
   - export TZ=America/New_York
+  # set maven alias
+  - shopt -s expand_aliases
+  - alias mvn='./mvnw -B -e -Dsort.skip=true'
   # configure maven logging
   #  - include date time
   #  - disable download and artifact update checking logging to make log easier to read through
   - echo "MAVEN_OPTS='-Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSSS -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn -Dorg.slf4j.simpleLogger.log.org.apache.maven.artifact.repository.metadata.DefaultRepositoryMetadataManager=warn'" > ~/.mavenrc
   # display some info I like to see in log
-  - ./mvnw -B -e -V buildplan:list-phase versions:display-dependency-updates versions:display-plugin-updates versions:display-property-updates
+  - mvn -V buildplan:list-phase versions:display-dependency-updates versions:display-plugin-updates versions:display-property-updates
 
 script:
-  - ./mvnw -B -e verify
+  - mvn verify
 
 after_success:
   # check with sputnik
   - python <(curl -s https://raw.githubusercontent.com/TouK/sputnik-ci/master/sputnik-ci.py)
   # generate and upload coverage report
-  - ./mvnw -B -e clean -Dcobertura.report.format=xml cobertura:cobertura && bash <(curl -s https://codecov.io/bash)
+  - mvn clean -Dcobertura.report.format=xml cobertura:cobertura && bash <(curl -s https://codecov.io/bash)
