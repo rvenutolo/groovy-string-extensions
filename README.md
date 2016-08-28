@@ -1,7 +1,7 @@
 # groovy-string-extensions
 [![Build Status](https://travis-ci.org/rvenutolo/groovy-string-extensions.svg?branch=master)](https://travis-ci.org/rvenutolo/groovy-string-extensions)
 [![Coverage Status](https://codecov.io/gh/rvenutolo/groovy-string-extensions/branch/master/graph/badge.svg)](https://codecov.io/gh/rvenutolo/groovy-string-extensions)
-[![Dependency Status](https://www.versioneye.com/user/projects/57670911276f0f00498e3bca/badge.svg?style=flat)](https://www.versioneye.com/user/projects/57670911276f0f00498e3bca)
+[![Dependency Status](https://www.versioneye.com/user/projects/57c3491212b52600166f89ad/badge.svg)](https://www.versioneye.com/user/projects/57c3491212b52600166f89ad)
 
 [![Maven Site](https://img.shields.io/badge/Maven%20Site-0.1.0--SNAPSHOT-brightgreen.svg)](https://rvenutolo.github.io/groovy-string-extensions/snapshot/)
 [![Groovydoc](https://img.shields.io/badge/Groovydoc-0.1.0--SNAPSHOT-blue.svg)](https://rvenutolo.github.io/groovy-string-extensions/snapshot/apidocs/)

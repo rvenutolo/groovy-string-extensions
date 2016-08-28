@@ -14,6 +14,8 @@ env:
     - secure: "YYQOiKzEjynDOLnLQt0IfMl9mst6QuTQ6kHjS8nqMYJ1j2B7hgJTPuUfNxBN4rsIWHgTNuhKA+WdE3CeAcowqLy/7+wI1eyAAI39Ya0tH9NapVBDkhyuMpLAxBrG/X5wmGdXx6RQMrSlJNfmNjpYOSuHFf7nMaLyhUGO425a1VWfNUE5+VVoKPTCc4gJ8TO6BRr26VvE4fGqVGlSdbS2Euu7i4Q1/ED2ZNaVEn1do165w3mJeYae8JPBClqmAV4MqCWUkqTvctPSLAXLHCjjR87ZHOWIMcIcf454f2SlH+B+9E9WYObF0J80SfBrk7BU1V5/YlmpMka0/gKaUa8XgY9FKWEWPLeOWL6lflUhHNlrvj59uXa5ZJjCRkMFgZxVdK1vN9esEc95sd+mU9grOBICE4ClJk7HcCmDswM8j7PSrhWgPZDbzhDqpkjEyqy38XkSxwosm1xNUM5Oxq1xdabHa18wjVGFBKMyiR8OcgxqJaS5NbBNojGvkVnG7H7eiUzhiNBd/RPrzbWMhx3EF+bUwwB63eUx9v6omMbcjoqblJqt0KOm/W/rpulDh6moJsr6PgHwae5q1nFeVIacKA4IgCcT07x5gifPWF06dCwF/8zjgPsnBzyb02SdOVVd+AJXkOxGeNxp2dKooOxMQ0m1/4v3h/DP5yRATKSMRu4="
     # OSSRH_PASSWORD
     - secure: "ojlnGFkRgYo0KLWb7cQd40LMUYj7y+ClHRhxDw04DsU3T5of932oyZJQXsFN1mrY3rusByhkQjw9ZcGcienXM8r6mXMxvzKNAtD8cqn1GBdqlntW/HzhcUW8wQEqCMOz0c0Z8wQamWyPBF05PMxToIX36xjMcLaXdDbYNS7gErMQrbQ+0H3oT6MkJxIymGVSiIEsU+qalIPfMfS6gzJyFCXuiDxyGVQRX2frwFkLvTXrBJ/1cbNa6I5wlvwHGVix++UftJLG85u2YOk54F8BVVdHKQQ6ojwr+33MadYufKbLB3sKSAu1NCE/TsaG+LDxKGd9GqN/pVbQmMSl1p+EknNEBeY4qyclf/iVCa4odUKbYedNxXQGKpAg8zgXU+RlnFAhHP5gtNajfFTz0PHAy5VzSN4MWOun+DxuCm8liT2fh1aJNaxWQOGOXA2ZQVbCUEtQo/qoXCnngU+afqBBypgSSIByybxIAts6dj84p+kfDw65IBVotd2F5/kaQa/7V0eG0AepRD4J3+amxkNu4/P03UPfx9H46f3wqFGVHrIFHL2Mw+9OL173qcfEptP5Mt4BNBqto/SAXigovUyqFmYbHA6uj2nxz3iNop1JWmE6/8uX9SA++/PaRnXbCUHzW5xu2pCKl+H4EwUtxiRDkMzuJwoD8b+8jSC0BgGChWM="
+    # VERSIONEYE_API_KEY
+    - secure: "jQyh4lLNjix4lHZpFeKAkvEpaLyXLbhqVyVuGgfnAFFH8F8vPAHskTh9RXAFJngEXR0RRGoXgysiF/omx1uMki20Ux39ucq5mpZYRiXR72qZnsh6GJtvAvkVyLZJE4BSwDkMY+2r5G0OE9hMYwlflWH2BawFVyF+TiQOy5LCJQAydXNvhbzpIvu51u8+kPs3wehrF4DFPb2kcOTENehmanC/DVJZ5PAGYs6MRmC3PCQ06NlRs2BPO7aP1y0jUJZ3MCEUsKq5NnDbWBkknmh7eEbz0Pf4bmHf9PZfiw/+nBIrCSjbhP95/67UakD9PNU1xBIS4+ePvOnhXJxnhs83kb5dt9VfLcSP7N0/2Se9CpZuMoCHG+8N4B+PcletwCLjXs2GYgzWZwO4Lycz84FML/Kr/QyqGPDObPfWafWhJ4qPjmYxJ9EcxgpSZ5znWa5HA9rjlSiCP+xTlz6U7PGggV3eSTan2+kMpNS6ycLwg6AsZFCzUgAP03esfb536hzFBIDKcFUjFVKhDAzsEpb0iVfGjZB9B59Ip/YHwT76Ypxss3HVFawfiztzQI8UORniwNXmMiq3ED68YNzV+oiSMlfzmqR/qeY2PKR4DXC4+HotsvKta96GeYLuZMXFjbr7rfyf7SnYDRvR78WCZn+MFWxPTGcJBpr0KIzNyTTRp1k="
 
 before_script:
   # set timezone so timestamps have time local to me
@@ -41,4 +43,11 @@ after_success:
     if [[ ${TRAVIS_BRANCH} == 'master' ]] && [[ ${TRAVIS_PULL_REQUEST} == 'false' ]]; then
         echo "<settings><servers><server><id>ossrh</id><username>\${env.OSSRH_USERNAME}</username><password>\${env.OSSRH_PASSWORD}</password></server></servers></settings>" > ~/settings.xml
         mvn -DskipTests=true deploy --settings ~/settings.xml
+    fi
+  # update versioneye
+  - |
+    if [[ ${TRAVIS_BRANCH} == 'master' ]] && [[ ${TRAVIS_PULL_REQUEST} == 'false' ]]; then
+        mkdir -p src/main/resources
+        echo 'project_id=57c3491212b52600166f89ad' > src/main/resources/versioneye.properties
+        mvn com.versioneye:versioneye-maven-plugin:update
     fi
