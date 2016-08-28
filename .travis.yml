@@ -41,13 +41,13 @@ after_success:
   # deploy to ossrh
   - |
     if [[ ${TRAVIS_BRANCH} == 'master' ]] && [[ ${TRAVIS_PULL_REQUEST} == 'false' ]]; then
-        echo "<settings><servers><server><id>ossrh</id><username>\${env.OSSRH_USERNAME}</username><password>\${env.OSSRH_PASSWORD}</password></server></servers></settings>" > ~/settings.xml
-        mvn -DskipTests=true deploy --settings ~/settings.xml
+      echo "<settings><servers><server><id>ossrh</id><username>\${env.OSSRH_USERNAME}</username><password>\${env.OSSRH_PASSWORD}</password></server></servers></settings>" > ~/settings.xml
+      mvn -DskipTests=true deploy --settings ~/settings.xml
     fi
   # update versioneye
   - |
     if [[ ${TRAVIS_BRANCH} == 'master' ]] && [[ ${TRAVIS_PULL_REQUEST} == 'false' ]]; then
-        mkdir -p src/main/resources
-        echo 'project_id=57c3491212b52600166f89ad' > src/main/resources/versioneye.properties
-        mvn com.versioneye:versioneye-maven-plugin:update
+      mkdir -p src/main/resources
+      echo 'project_id=57c3491212b52600166f89ad' > src/main/resources/versioneye.properties
+      mvn com.versioneye:versioneye-maven-plugin:update
     fi
