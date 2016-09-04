@@ -74,6 +74,15 @@
                 <directory>${project.basedir}/src/main/resources</directory>
             </resource>
         </resources>
+        <plugins>
+            <plugin>
+                <groupId>com.versioneye</groupId>
+                <artifactId>versioneye-maven-plugin</artifactId>
+                <configuration>
+                    <projectId>57c3491212b52600166f89ad</projectId>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
 </project>
