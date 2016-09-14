@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.venutolo</groupId>
         <artifactId>groovy-project-parent-with-build</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.1.0</version>
     </parent>
 
     <artifactId>groovy-string-extensions</artifactId>
@@ -50,21 +50,6 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <!-- TODO remove this when not using snapshot of parent pom -->
-    <repositories>
-        <repository>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <id>ossrh</id>
-            <name>ossrh-snapshots</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-        </repository>
-    </repositories>
 
     <build>
         <resources>
