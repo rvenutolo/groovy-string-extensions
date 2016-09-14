@@ -60,3 +60,26 @@ GString query = """
 
 assert query.trimAndCollapseWhitespace() == "SELECT * FROM cities WHERE country = ${country} AND region = ${region}"
 ```
+
+<!-- START_REMOVE_FOR_SITE -->
+---
+ 
+### Make Release
+
+```bash
+./mvnw -B release:clean release:prepare release:perform
+```
+
+### Update Maven Wrapper
+
+Use Maven Wrapper plugin
+```bash
+mvn -N io.takari:maven:wrapper -Dmaven=3.3.9
+```
+
+Download latest scripts
+```bash
+wget https://raw.githubusercontent.com/takari/maven-wrapper/master/mvnw
+wget https://raw.githubusercontent.com/takari/maven-wrapper/master/mvnw.cmd
+```
+<!-- END_REMOVE_FOR_SITE -->
