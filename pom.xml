@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>groovy-string-extensions</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.1.0</version>
     <packaging>jar</packaging>
 
     <name>${project.artifactId}</name>
@@ -25,6 +25,7 @@
     <scm>
         <connection>scm:git:git@github.com:rvenutolo/groovy-string-extensions.git</connection>
         <developerConnection>scm:git:git@github.com:rvenutolo/groovy-string-extensions.git</developerConnection>
+        <tag>groovy-string-extensions-0.1.0</tag>
         <url>https://github.com/rvenutolo/groovy-string-extensions</url>
     </scm>
 
