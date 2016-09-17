@@ -5,8 +5,8 @@
 [![Dependency Status](https://www.versioneye.com/user/projects/57c3491212b52600166f89ad/badge.svg)](https://www.versioneye.com/user/projects/57c3491212b52600166f89ad)
 [![Dependency Status](https://dependencyci.com/github/rvenutolo/groovy-string-extensions/badge)](https://dependencyci.com/github/rvenutolo/groovy-string-extensions)
 
-[![Maven Site](https://img.shields.io/badge/Maven%20Site-0.1.0--SNAPSHOT-brightgreen.svg)](https://rvenutolo.github.io/groovy-string-extensions/snapshot/)
-[![Groovydoc](https://img.shields.io/badge/Groovydoc-0.1.0--SNAPSHOT-blue.svg)](https://rvenutolo.github.io/groovy-string-extensions/snapshot/apidocs/)
+[![Maven Site](https://img.shields.io/badge/Maven%20Site-0.1.0-brightgreen.svg)](https://rvenutolo.github.io/groovy-string-extensions/0.1.0/)
+[![Groovydoc](https://img.shields.io/badge/Groovydoc-0.1.0-blue.svg)](https://rvenutolo.github.io/groovy-string-extensions/0.1.0/apidocs/)
 
 [![License](https://img.shields.io/hexpm/l/plug.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Sputnik](https://sputnik.ci/conf/badge)](https://sputnik.ci/app#/builds/rvenutolo/groovy-string-extensions)
