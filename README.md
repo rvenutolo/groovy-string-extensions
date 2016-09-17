@@ -11,9 +11,28 @@
 
 [![License](https://img.shields.io/hexpm/l/plug.svg)](https://www.apache.org/licenses/LICENSE-2.0)
 [![Sputnik](https://sputnik.ci/conf/badge)](https://sputnik.ci/app#/builds/rvenutolo/groovy-string-extensions)
-<!-- END_REMOVE_FOR_SITE -->
 
 A (very small) collection of Groovy (v2.0+) extensions for String and GString.
+
+---
+<!-- END_REMOVE_FOR_SITE -->
+#### Maven:
+
+```xml
+<dependency>
+    <groupId>org.venutolo</groupId>
+    <artifactId>groovy-string-extensions</artifactId>
+    <version>0.1.0</version>
+</dependency>
+```
+
+#### Gradle:
+
+```groovy
+compile 'org.venutolo:groovy-string-extensions:0.1.0'
+```
+
+---
 
 __Note:__ The GString methods do not modify the GString instance, and instead return a separate GString instance. The GString methods also do not modify the embedded values.
 
