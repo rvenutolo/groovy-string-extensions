@@ -17,6 +17,7 @@
 A (very small) collection of Groovy (v2.0+) extensions for String and GString.
 
 ---
+
 #### Maven:
 
 ```xml
