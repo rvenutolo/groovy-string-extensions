@@ -39,10 +39,13 @@
 <p><a href="https://travis-ci.org/rvenutolo/groovy-string-extensions"><img src="https://travis-ci.org/rvenutolo/groovy-string-extensions.svg?branch=master" alt="Build Status"></a>
 <a href="https://codecov.io/gh/rvenutolo/groovy-string-extensions"><img src="https://codecov.io/gh/rvenutolo/groovy-string-extensions/branch/master/graph/badge.svg" alt="Coverage Status"></a>
 <a href="https://www.versioneye.com/user/projects/57c3491212b52600166f89ad"><img src="https://www.versioneye.com/user/projects/57c3491212b52600166f89ad/badge.svg" alt="Dependency Status"></a>
-<a href="https://dependencyci.com/github/rvenutolo/groovy-string-extensions"><img src="https://dependencyci.com/github/rvenutolo/groovy-string-extensions/badge" alt="Dependency Status"></a></p>
+<a href="https://dependencyci.com/github/rvenutolo/groovy-string-extensions"><img src="https://dependencyci.com/github/rvenutolo/groovy-string-extensions/badge" alt="Dependency Status"></a>
+<a href="https://app.updateimpact.com/latest/766637912447127552/org.venutolo%3Agroovy-string-extensions%3A0.1.0"><img src="https://app.updateimpact.com/badge/766637912447127552/org.venutolo%3Agroovy-string-extensions%3A0.1.0.svg?config=compile" alt="Dependencies"></a></p>
 
-<p><a href="https://rvenutolo.github.io/groovy-string-extensions/snapshot/"><img src="https://img.shields.io/badge/Maven%20Site-0.1.0--SNAPSHOT-brightgreen.svg" alt="Maven Site"></a>
-<a href="https://rvenutolo.github.io/groovy-string-extensions/snapshot/apidocs/"><img src="https://img.shields.io/badge/Groovydoc-0.1.0--SNAPSHOT-blue.svg" alt="Groovydoc"></a></p>
+<p><a href="https://maven-badges.herokuapp.com/maven-central/org.venutolo/groovy-string-extensions"><img src="https://maven-badges.herokuapp.com/maven-central/org.venutolo/groovy-string-extensions/badge.svg" alt="Maven Central"></a>
+<a href="https://github.com/rvenutolo/groovy-string-extensions/releases"><img src="https://img.shields.io/github/release/venutolo/groovy-string-extensions.svg" alt="GitHub release"></a>
+<a href="https://rvenutolo.github.io/groovy-string-extensions/0.1.0/"><img src="https://img.shields.io/badge/Maven%20Site-0.1.0-brightgreen.svg" alt="Maven Site"></a>
+<a href="https://rvenutolo.github.io/groovy-string-extensions/0.1.0/apidocs/"><img src="https://img.shields.io/badge/Groovydoc-0.1.0-blue.svg" alt="Groovydoc"></a></p>
 
 <p><a href="https://www.apache.org/licenses/LICENSE-2.0"><img src="https://img.shields.io/hexpm/l/plug.svg" alt="License"></a>
 <a href="https://sputnik.ci/app#/builds/rvenutolo/groovy-string-extensions"><img src="https://sputnik.ci/conf/badge" alt="Sputnik"></a></p>
@@ -51,10 +54,28 @@
 
 <p>A (very small) collection of Groovy (v2.0+) extensions for String and GString.</p>
 
-<p><strong>Note:</strong> The GString methods do not modify the GString instance, and instead return a separate GString instance. The GString methods also do not modify the embedded values.</p>
+<hr>
+
+<h4>
+<a id="maven" class="anchor" href="#maven" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Maven:</h4>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">dependency</span>&gt;
+    &lt;<span class="pl-ent">groupId</span>&gt;org.venutolo&lt;/<span class="pl-ent">groupId</span>&gt;
+    &lt;<span class="pl-ent">artifactId</span>&gt;groovy-string-extensions&lt;/<span class="pl-ent">artifactId</span>&gt;
+    &lt;<span class="pl-ent">version</span>&gt;0.1.0&lt;/<span class="pl-ent">version</span>&gt;
+&lt;/<span class="pl-ent">dependency</span>&gt;</pre></div>
+
+<h4>
+<a id="gradle" class="anchor" href="#gradle" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Gradle:</h4>
+
+<div class="highlight highlight-source-groovy"><pre>compile <span class="pl-s"><span class="pl-pds">'</span>org.venutolo:groovy-string-extensions:0.1.0<span class="pl-pds">'</span></span></pre></div>
+
+<hr>
 
 <h2>
 <a id="extensions-methods" class="anchor" href="#extensions-methods" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Extensions Methods</h2>
+
+<p><strong>Note:</strong> The GString methods do not modify the GString instance, and instead return a separate GString instance. The GString methods also do not modify the embedded values.</p>
 
 <h3>
 <a id="joinlines" class="anchor" href="#joinlines" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><code>.joinLines()</code>
@@ -96,6 +117,29 @@
 <span class="pl-s"><span class="pl-pds">"""</span></span>
 
 <span class="pl-k">assert</span> query<span class="pl-k">.</span>trimAndCollapseWhitespace() <span class="pl-k">==</span> <span class="pl-s"><span class="pl-pds">"</span>SELECT * FROM cities WHERE country = <span class="pl-s1"><span class="pl-pse">${</span>country<span class="pl-pse">}</span></span> AND region = <span class="pl-s1"><span class="pl-pse">${</span>region<span class="pl-pse">}</span></span><span class="pl-pds">"</span></span></pre></div>
+
+
+
+<hr>
+
+<h3>
+<a id="make-release" class="anchor" href="#make-release" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Make Release</h3>
+
+<div class="highlight highlight-source-shell"><pre>./mvnw -B release:clean release:prepare release:perform</pre></div>
+
+<h3>
+<a id="update-maven-wrapper" class="anchor" href="#update-maven-wrapper" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Update Maven Wrapper</h3>
+
+<p>Use Maven Wrapper plugin</p>
+
+<div class="highlight highlight-source-shell"><pre>mvn -N io.takari:maven:wrapper -Dmaven=3.3.9</pre></div>
+
+<p>Download latest scripts</p>
+
+<div class="highlight highlight-source-shell"><pre>wget https://raw.githubusercontent.com/takari/maven-wrapper/master/mvnw
+wget https://raw.githubusercontent.com/takari/maven-wrapper/master/mvnw.cmd</pre></div>
+
+
       </section>
     </div>
 
