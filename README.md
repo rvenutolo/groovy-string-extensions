@@ -7,7 +7,7 @@
 [![Dependencies](https://app.updateimpact.com/badge/766637912447127552/org.venutolo%3Agroovy-string-extensions%3A0.1.0.svg?config=compile)](https://app.updateimpact.com/latest/766637912447127552/org.venutolo%3Agroovy-string-extensions%3A0.1.0)
                             
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.venutolo/groovy-string-extensions/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.venutolo/groovy-string-extensions)
-[![GitHub release](https://img.shields.io/github/release/venutolo/groovy-string-extensions.svg)](https://github.com/rvenutolo/groovy-string-extensions/releases)
+[![GitHub release](https://img.shields.io/github/release/rvenutolo/groovy-string-extensions.svg)](https://github.com/rvenutolo/groovy-string-extensions/releases)
 [![Maven Site](https://img.shields.io/badge/Maven%20Site-0.1.0-brightgreen.svg)](https://rvenutolo.github.io/groovy-string-extensions/0.1.0/)
 [![Groovydoc](https://img.shields.io/badge/Groovydoc-0.1.0-blue.svg)](https://rvenutolo.github.io/groovy-string-extensions/0.1.0/apidocs/)
 
