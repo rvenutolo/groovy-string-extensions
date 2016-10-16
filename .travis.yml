@@ -40,7 +40,7 @@ script:
 
 after_success:
   # sonarqube
-  - mvn sonar:sonar -Dsonar.host.url=https://sonarqube.com -Dsonar.login=$SONAR_TOKEN
+  - mvn sonar:sonar -Dsonar.login=$SONAR_TOKEN $SONAR_SCANNER_OPTS
   # check with sputnik
   - python <(curl -s https://raw.githubusercontent.com/TouK/sputnik-ci/master/sputnik-ci.py)
   # generate and upload coverage report
