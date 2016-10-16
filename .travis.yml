@@ -39,8 +39,6 @@ script:
   - mvn verify
 
 after_success:
-  # sonarqube
-  - mvn sonar:sonar -Dsonar.login=$SONAR_TOKEN $SONAR_SCANNER_OPTS
   # check with sputnik
   - python <(curl -s https://raw.githubusercontent.com/TouK/sputnik-ci/master/sputnik-ci.py)
   # generate and upload coverage report
@@ -48,9 +46,15 @@ after_success:
   # if master branch and not a pull request
   #  - deploy to ossrh
   #  - update versioneye
+  #  - run sonar analysis
+  # if pull request
+  #  - run sonar analysis on pull request, but not do not push results
   - |
-    if [[ ${TRAVIS_BRANCH} == 'master' ]] && [[ ${TRAVIS_PULL_REQUEST} == 'false' ]]; then
+    if [ "$TRAVIS_BRANCH" = "master" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
       echo "<settings><servers><server><id>ossrh</id><username>\${env.OSSRH_USERNAME}</username><password>\${env.OSSRH_PASSWORD}</password></server></servers></settings>" > ~/settings.xml
       mvn deploy --settings ~/settings.xml
       mvn versioneye:update
+      mvn sonar:sonar $SONAR_SCANNER_OPTS -Dsonar.login=$SONAR_TOKEN
+    elif [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ -n "${GITHUB_TOKEN-}" ]; then
+      mvn sonar:sonar $SONAR_SCANNER_OPTS -Dsonar.login=$SONAR_TOKEN -Dsonar.analysis.mode=preview -Dsonar.github.oauth=$GITHUB_TOKEN -Dsonar.github.repository=$TRAVIS_REPO_SLUG -Dsonar.github.pullRequest=$TRAVIS_PULL_REQUEST
     fi
