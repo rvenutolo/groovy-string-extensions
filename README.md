@@ -2,6 +2,7 @@
 <!-- START_REMOVE_FOR_SITE -->
 [![Build Status](https://travis-ci.org/rvenutolo/groovy-string-extensions.svg?branch=master)](https://travis-ci.org/rvenutolo/groovy-string-extensions)
 [![Coverage Status](https://codecov.io/gh/rvenutolo/groovy-string-extensions/branch/master/graph/badge.svg)](https://codecov.io/gh/rvenutolo/groovy-string-extensions)
+[![Quality Gate](https://sonarqube.com/api/badges/gate?key=org.venutolo:groovy-string-extensions)](https://sonarqube.com/dashboard/index/org.venutolo:groovy-string-extensions)
 [![Dependency Status](https://www.versioneye.com/user/projects/57c3491212b52600166f89ad/badge.svg)](https://www.versioneye.com/user/projects/57c3491212b52600166f89ad)
 [![Dependency Status](https://dependencyci.com/github/rvenutolo/groovy-string-extensions/badge)](https://dependencyci.com/github/rvenutolo/groovy-string-extensions)
 [![Dependencies](https://app.updateimpact.com/badge/766637912447127552/org.venutolo%3Agroovy-string-extensions%3A0.1.0.svg?config=compile)](https://app.updateimpact.com/latest/766637912447127552/org.venutolo%3Agroovy-string-extensions%3A0.1.0)
