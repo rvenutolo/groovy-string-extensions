@@ -19,8 +19,12 @@ env:
     - secure: "ojlnGFkRgYo0KLWb7cQd40LMUYj7y+ClHRhxDw04DsU3T5of932oyZJQXsFN1mrY3rusByhkQjw9ZcGcienXM8r6mXMxvzKNAtD8cqn1GBdqlntW/HzhcUW8wQEqCMOz0c0Z8wQamWyPBF05PMxToIX36xjMcLaXdDbYNS7gErMQrbQ+0H3oT6MkJxIymGVSiIEsU+qalIPfMfS6gzJyFCXuiDxyGVQRX2frwFkLvTXrBJ/1cbNa6I5wlvwHGVix++UftJLG85u2YOk54F8BVVdHKQQ6ojwr+33MadYufKbLB3sKSAu1NCE/TsaG+LDxKGd9GqN/pVbQmMSl1p+EknNEBeY4qyclf/iVCa4odUKbYedNxXQGKpAg8zgXU+RlnFAhHP5gtNajfFTz0PHAy5VzSN4MWOun+DxuCm8liT2fh1aJNaxWQOGOXA2ZQVbCUEtQo/qoXCnngU+afqBBypgSSIByybxIAts6dj84p+kfDw65IBVotd2F5/kaQa/7V0eG0AepRD4J3+amxkNu4/P03UPfx9H46f3wqFGVHrIFHL2Mw+9OL173qcfEptP5Mt4BNBqto/SAXigovUyqFmYbHA6uj2nxz3iNop1JWmE6/8uX9SA++/PaRnXbCUHzW5xu2pCKl+H4EwUtxiRDkMzuJwoD8b+8jSC0BgGChWM="
     # VERSIONEYE_API_KEY
     - secure: "jQyh4lLNjix4lHZpFeKAkvEpaLyXLbhqVyVuGgfnAFFH8F8vPAHskTh9RXAFJngEXR0RRGoXgysiF/omx1uMki20Ux39ucq5mpZYRiXR72qZnsh6GJtvAvkVyLZJE4BSwDkMY+2r5G0OE9hMYwlflWH2BawFVyF+TiQOy5LCJQAydXNvhbzpIvu51u8+kPs3wehrF4DFPb2kcOTENehmanC/DVJZ5PAGYs6MRmC3PCQ06NlRs2BPO7aP1y0jUJZ3MCEUsKq5NnDbWBkknmh7eEbz0Pf4bmHf9PZfiw/+nBIrCSjbhP95/67UakD9PNU1xBIS4+ePvOnhXJxnhs83kb5dt9VfLcSP7N0/2Se9CpZuMoCHG+8N4B+PcletwCLjXs2GYgzWZwO4Lycz84FML/Kr/QyqGPDObPfWafWhJ4qPjmYxJ9EcxgpSZ5znWa5HA9rjlSiCP+xTlz6U7PGggV3eSTan2+kMpNS6ycLwg6AsZFCzUgAP03esfb536hzFBIDKcFUjFVKhDAzsEpb0iVfGjZB9B59Ip/YHwT76Ypxss3HVFawfiztzQI8UORniwNXmMiq3ED68YNzV+oiSMlfzmqR/qeY2PKR4DXC4+HotsvKta96GeYLuZMXFjbr7rfyf7SnYDRvR78WCZn+MFWxPTGcJBpr0KIzNyTTRp1k="
+    # SONAR_HOST_URL
+    - SONAR_HOST_URL=https://sonarqube.com
     # SONAR_TOKEN
     - secure: "WaDjn9wtDkuHx6woTTAJBhdKOBgldyKNuitkyzB/y53ZbbazTU0ToaIw8ZrDgGLFzlm/8sfimMJUtwEm31l2Xm/CxHLOF+9NDB3geoAI221/29R4oDpDVQEqVT1f1mXpTEhajjiVy1VGsGNuUvpnfZ2mCTeEbn5bGp9eTwntkJifC99qbzjboti1TxTmuW7ohMAI1gy7cvJ+CHFWdiATN5C3xDFdCqiddb56QzsshYZvvn3cf8QmguN3bhh4vZ6iZERE9HFqherYGWaDxX6tnElOvh4p4RxKuhbQpEppNupRgkhnd8tpnPgKh53kl7W2BYdhnpsFQUM/bIz4hhNF0spo6l68VoNmxHms0Tze5C7APhGmQxClgbN/gi2p/2fqR+rvLODXx50+ezZhNNlqrPVBgKxtxWOA6SjNvWYJE44hFsmiwaX4OHvIqTVrnjLfBqarg/3yLYNEiVThiTT1EQgHviGlkf408JVG87V7xQmrm+iauQpkDPgFC8CgHg6DT45IhsRcIBcKUXKp3QdrgRkDadkMaK0vHyvvnajP5Wu9onKIOpBMMtZ4q3w7OCLsi6dsrg/yb7RtAG8wAuoopNdrnOV0BWQXeCP11jb+1A00I0xbWc6dPtLM8UYq4dEsrOEBU1Rn9VXRCg3/ygI7do9TTci5Ee1re46PVvcCe/8="
+    # GITHUB_TOKEN
+    - secure: "Kic0i+Hs+Qt7vYVxi7/EB51mHhVEqBvJPVgOCDjLxUAbP3Qvi7T2m6nTqtKMjVRWF88wWIPRt2SdwzFJQg3081gxh5XnB+9O7w3m1wbosotWNAKVLc4kGpyu4lYKWFAXFXimGlmbOzEZWoh2oMKPM0ha4449bvk/IER2vALlgFNgpBIroqyWTQAydss4+hsrv8WSTVnR1piMs9I6KEK3bPywFg/3nRyWv6ucqQPXOsfVFwS+DLsqfg3+Hl9iYkRkPtNXjzCW57oKsGDP3Ajvj3LfXGejJlG/fpsTA1IlGkRE2GUxpIHZtG6bSlIwMrf42IVDOU/GszBVzohYhxnay8iVph2gRCxpwosN9ATpodUOydSe5Hwsk0YYmgq5N79JfECgZs89MQHMTSfM3GIgl3qTMcBrrs5UIhI1mB+fr9LtUyALJ7tpevYz/BE59w/ax6HrBsvSFqMJVvMD/aKdF07LNRzS11o98iJlH6ejstm46UTGgnmtFFp1v9Kw307CBNv5aJOiDegced7M2UGN081vjkAfOrMW102jmUwr7baqGct3cGCxex6LRHgxCHDNgleH8RK7K5gVfyW4WnxFGMn+VWK8+STewKGxZ0j5iX8AmC18X+vXIuo4/Vck4DmR/bozG60fZg+UMH8lZreQ08JGY09+GY5SPt3ElKAVEnU="
 
 before_script:
   # set timezone so timestamps have time local to me
@@ -50,11 +54,11 @@ after_success:
   # if pull request
   #  - run sonar analysis on pull request, but not do not push results
   - |
-    if [ "$TRAVIS_BRANCH" = "master" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
+    if [[ "${TRAVIS_BRANCH}" == 'master' ]] && [[ "${TRAVIS_PULL_REQUEST}" == 'false' ]]; then
       echo "<settings><servers><server><id>ossrh</id><username>\${env.OSSRH_USERNAME}</username><password>\${env.OSSRH_PASSWORD}</password></server></servers></settings>" > ~/settings.xml
       mvn deploy --settings ~/settings.xml
       mvn versioneye:update
-      mvn sonar:sonar $SONAR_SCANNER_OPTS -Dsonar.login=$SONAR_TOKEN
-    elif [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ -n "${GITHUB_TOKEN-}" ]; then
-      mvn sonar:sonar $SONAR_SCANNER_OPTS -Dsonar.login=$SONAR_TOKEN -Dsonar.analysis.mode=preview -Dsonar.github.oauth=$GITHUB_TOKEN -Dsonar.github.repository=$TRAVIS_REPO_SLUG -Dsonar.github.pullRequest=$TRAVIS_PULL_REQUEST
+      mvn sonar:sonar -Dsonar.host.url="${SONAR_HOST_URL}" -Dsonar.login="${SONAR_TOKEN}"
+    elif [[ "${TRAVIS_PULL_REQUEST}" != 'false' ]] && [[ -n "${GITHUB_TOKEN}" ]]; then
+      mvn sonar:sonar -Dsonar.host.url="${SONAR_HOST_URL}" -Dsonar.login="${SONAR_TOKEN}" -Dsonar.analysis.mode=preview -Dsonar.github.oauth="${GITHUB_TOKEN}" -Dsonar.github.repository="${TRAVIS_REPO_SLUG}" -Dsonar.github.pullRequest="${TRAVIS_PULL_REQUEST}"
     fi
