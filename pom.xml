@@ -6,7 +6,7 @@
     <parent>
         <groupId>org.venutolo</groupId>
         <artifactId>groovy-project-parent-with-build</artifactId>
-        <version>1.1.0</version>
+        <version>1.1.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>groovy-string-extensions</artifactId>
