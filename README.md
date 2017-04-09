@@ -97,7 +97,7 @@ assert query.trimAndCollapseWhitespace() == "SELECT * FROM cities WHERE country 
 
 Use Maven Wrapper plugin
 ```bash
-mvn -N io.takari:maven:wrapper -Dmaven=3.3.9
+mvn -N io.takari:maven:wrapper -Dmaven=3.5.0
 ```
 
 Download latest scripts
