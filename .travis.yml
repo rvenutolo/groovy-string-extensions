@@ -37,7 +37,7 @@ before_script:
   #  - disable download and artifact update checking logging to make log easier to read through
   - echo "MAVEN_OPTS='-Dorg.slf4j.simpleLogger.showDateTime=true -Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss:SSSS -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn -Dorg.slf4j.simpleLogger.log.org.apache.maven.artifact.repository.metadata.DefaultRepositoryMetadataManager=warn'" > ~/.mavenrc
   # display some info I like to see in log
-  #   - `versions:display-plugin-updates` will output error about not defining minimum maven version via `prerequsites`, but that is deprecated
+  #   - `versions:display-plugin-updates` will output error about not defining minimum maven version via `prerequisites`, but that is deprecated
   - mvn -V buildplan:list-phase versions:display-dependency-updates versions:display-plugin-updates versions:display-property-updates
 
 script:
