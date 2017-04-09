@@ -18,10 +18,6 @@
     <url>https://github.com/rvenutolo/groovy-string-extensions</url>
     <inceptionYear>2016</inceptionYear>
 
-    <prerequisites>
-        <maven>${maven.minimum.version}</maven>
-    </prerequisites>
-
     <scm>
         <connection>scm:git:git@github.com:rvenutolo/groovy-string-extensions.git</connection>
         <developerConnection>scm:git:git@github.com:rvenutolo/groovy-string-extensions.git</developerConnection>
